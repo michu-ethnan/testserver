@@ -1,0 +1,88 @@
+-------------------------------------------------------------------------------
+Test set: com.deosite.tests.suites.test.dajar.CheckoutSuite_T_Dajar
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 444.341 s <<< FAILURE! - in com.deosite.tests.suites.test.dajar.CheckoutSuite_T_Dajar
+Go to checkout using pickup delivery.Select Koszalin  Time elapsed: 27.714 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'she selects delivery type pickup and chooses Koszalin as a person' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("she selects delivery type pickup and chooses Koszalin as a person")
+public void she_selects_delivery_type_pickup_and_chooses_koszalin_as_a_person() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Go to checkout using pickup delivery.Select  Słupsk  Time elapsed: 25.77 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'she selects delivery type pickup and chooses Słupsk as a person' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("she selects delivery type pickup and chooses Słupsk as a person")
+public void she_selects_delivery_type_pickup_and_chooses_słupsk_as_a_person() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Go to checkout using pickup delivery.Select Szczecin  Time elapsed: 25.43 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'she selects delivery type pickup and chooses Szczecin as a person' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("she selects delivery type pickup and chooses Szczecin as a person")
+public void she_selects_delivery_type_pickup_and_chooses_szczecin_as_a_person() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Go to checkout using pickup delivery.Select Piła  Time elapsed: 27.252 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'she selects delivery type pickup and chooses Piła as a person' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("she selects delivery type pickup and chooses Piła as a person")
+public void she_selects_delivery_type_pickup_and_chooses_piła_as_a_person() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Go to checkout using pickup delivery.Select Toruń  Time elapsed: 27.295 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'she selects delivery type pickup and chooses Toruń as a person' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("she selects delivery type pickup and chooses Toruń as a person")
+public void she_selects_delivery_type_pickup_and_chooses_toruń_as_a_person() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Go to checkout using pickup delivery.Select Bydgoszcz  Time elapsed: 25.978 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'she selects delivery type pickup and chooses Bydgoszcz as a person' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("she selects delivery type pickup and chooses Bydgoszcz as a person")
+public void she_selects_delivery_type_pickup_and_chooses_bydgoszcz_as_a_person() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Go to checkout using pickup delivery.Select Wrocław  Time elapsed: 27.189 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'she selects delivery type pickup and chooses Wrocław as a person' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("she selects delivery type pickup and chooses Wrocław as a person")
+public void she_selects_delivery_type_pickup_and_chooses_wrocław_as_a_person() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
