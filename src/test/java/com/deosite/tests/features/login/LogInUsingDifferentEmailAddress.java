@@ -20,10 +20,10 @@ import net.thucydides.core.annotations.Steps;
 import static com.deosite.tests.pages.AccountPage.EMAIL_ADDRESS;
 import static com.deosite.tests.pages.AccountPage.LOGOUT_BUTTON;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class LogInUsingDifferentEmailAddress {
 
@@ -41,7 +41,7 @@ public class LogInUsingDifferentEmailAddress {
                 Open.loginPage(),
                 FillInLoginForm.type("login"),
                 SubmitLoginForm.submitLoginForm(),
-                MoveMouseToTop.move(),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 Open.accountPage(),
                 WaitUntil.the(EMAIL_ADDRESS, isPresent())
         );

@@ -256,23 +256,28 @@
                         <version>${maven.failsafe-plugin.version}</version>
                         <configuration>
                             <includes>
-                                <include>**/CheckoutSuite*.java</include>
-                                <include>**/OrderingTestSuite*.java</include>
-                                <include>**/OrderingLoggedInSuite*.java</include>
-                                <include>**/FilteringTestSuite*.java</include>
+                               <include>**/CheckoutSuite*.java</include>
+                                <include>**/OrderingTestSuite_1*.java</include>
+                                <include>**/OrderingTestSuite_2*.java</include>
+                                <include>**/OrderingTestSuite_3*.java</include>-->
+                                <include>**/OrderingLoggedInSuite_1*.java</include>
+                                <include>**/OrderingLoggedInSuite_2*.java</include>
+                                <include>**/OrderingLoggedInSuite_3*.java</include>
+                             <include>**/FilteringTestSuite*.java</include>
                                 <include>**/LoggingInSuite*.java</include>
-                                 <include>**/NavigatingWebsiteSuite*.java</include>
-                                 <include>**/RegisteringSuite*.java</include>
-                                <include>**/SortingSuite*.java</include>
-                                <include>**/UsingMinicartSuite*.java</include>
-                                 <include>**/UsingMyAccountSuite*.java</include>
-                                 <include>**/CookiesPanelSuite*.java</include>
-                                <include>**/ProductPageSuite*.java</include>
-                                <include>**/CouponCodeSuite*.java</include>
+                                <include>**/NavigatingWebsiteSuite*.java</include>
+                                <include>**/RegisteringSuite*.java</include>
+                               <include>**/SortingSuite*.java</include>
+                               <include>**/UsingMinicartSuite_1*.java</include>
+                                <include>**/UsingMinicartSuite_2*.java</include>
+                                <include>**/UsingMyAccountSuite*.java</include>
+                               <include>**/ProductPageSuite*.java</include>
+                               <include>**/CouponCodeSuite_1*.java</include>
+                                <include>**/CouponCodeSuite_2*.java</include>
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>11</threadCount>
-                            <forkCount>11</forkCount>
+                            <threadCount>20</threadCount>
+                            <forkCount>20</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>

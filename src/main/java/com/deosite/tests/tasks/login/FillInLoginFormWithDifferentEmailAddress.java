@@ -16,8 +16,7 @@ import static com.deosite.tests.pages.LoginPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.LoginPage.PASSWORD_INPUT;
 import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.LoginPage.MY_ACCOUNT_BUTTON;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class FillInLoginFormWithDifferentEmailAddress implements Task {
 
@@ -44,6 +43,7 @@ public class FillInLoginFormWithDifferentEmailAddress implements Task {
         actor.attemptsTo(
                 WaitUntil.the(SUBMIT_BUTTON, isClickable()),
                 Click.on(SUBMIT_BUTTON),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 WaitUntil.the(MY_ACCOUNT_BUTTON, isClickable()),
                 Open.accountPage(),
                 WaitUntil.the(AccountPage.EMAIL_ADDRESS, isPresent())

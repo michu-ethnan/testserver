@@ -1,5 +1,3 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Add two different products and go to checkout","Should be able to add two products from the same category","SUCCESS","2022-03-31T13:56:19.280471+02:00[Europe/Warsaw]","0.0","62.43"
-"Add two different products and go to checkout","Should be able to add two products from different categories","SUCCESS","2022-03-31T13:57:21.849507+02:00[Europe/Warsaw]","0.0","55.65"
-"Refresh payment page","Should be able to","SUCCESS","2022-03-31T14:01:24.216019+02:00[Europe/Warsaw]","0.0","57.89"
-"Select different country","Should be able to","SUCCESS","2022-03-31T14:02:22.17612+02:00[Europe/Warsaw]","0.0","77.25"
+"Refresh payment page","Should be able to","SUCCESS","2022-04-04T13:43:13.458589Z[Etc/UTC]","0.0","159.77"
+"Select different country","Should be able to","SUCCESS","2022-04-04T13:45:53.553943Z[Etc/UTC]","0.0","171.46"

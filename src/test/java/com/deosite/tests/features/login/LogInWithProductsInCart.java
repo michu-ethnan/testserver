@@ -22,6 +22,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -59,22 +60,14 @@ public class LogInWithProductsInCart {
                 WaitUntil.the(LOGIN_BUTTON, isPresent()).forNoMoreThan(100).seconds(),
                 Open.loginPage(),
                 FillInLoginForm.type("login"),
-                SubmitLoginForm.submitLoginForm()
+                SubmitLoginForm.submitLoginForm(),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );
     }
 
     @And("opens the minicart")
     public void actor_opens_the_minicart() {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(SEARCH_BAR, isPresent()),
-                ClickCategory.byCategoryNumber(5),
-                WaitUntil.the(HomePage.DAJAR_LOGO, isPresent()),
-                ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(7),
-                //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
-                AddProduct.toCart(),
-                MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
                 Open.miniCart(),
                 WaitUntil.the(MiniCart.GO_TO_CHECKOUT_BUTTON, isPresent()).forNoMoreThan(100).seconds()
         );

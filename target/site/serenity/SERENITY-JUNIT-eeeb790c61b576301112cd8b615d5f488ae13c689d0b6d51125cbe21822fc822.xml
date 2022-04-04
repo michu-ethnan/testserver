@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Add two different products and go to checkout" skipped="0" tests="2" time="118.08" timestamp="2022-03-31 01:56:19"><testcase name="Should be able to add two products from the same category"/><testcase name="Should be able to add two products from different categories"/></testsuite>

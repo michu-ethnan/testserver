@@ -34,7 +34,7 @@ public class Bundle_pl_PL extends ListResourceBundle {
 
                 // Alerts
                 {"added to cart", "Produkt został dodany do koszyka"},
-                {"address saved", "Address saved"},
+                {"address saved", "Adres zapisany"},
                 {"address deleted", "Address deleted"},
 
                 // Messages
@@ -96,6 +96,18 @@ public class Bundle_pl_PL extends ListResourceBundle {
                 )},
                 {"login", new LoginForm(
                         "tester-email-tester@yandex.com",
+                        "Test12345!"
+                )},
+                {"login to order_1", new LoginForm(
+                        "abisimeon22@yandex.com",
+                        "Test12345!"
+                )},
+                {"login to order_2", new LoginForm(
+                        "abisimeon222@yandex.com",
+                        "Test12345!"
+                )},
+                {"login to order_3", new LoginForm(
+                        "abisimeon223@yandex.com",
                         "Test12345!"
                 )},
                 {"differentEmail", new DifferentLoginForm(

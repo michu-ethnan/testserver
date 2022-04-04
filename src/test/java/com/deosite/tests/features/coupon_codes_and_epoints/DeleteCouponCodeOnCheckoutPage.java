@@ -18,15 +18,10 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
-import static com.deosite.tests.pages.CheckoutPage.COUPON_CODE_BUTTON;
-import static com.deosite.tests.pages.CheckoutPage.COUPON_CODE_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.APPLY_COUPON_CODE_BUTTON;
-import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
-import static com.deosite.tests.pages.CheckoutPage.DELETE_COUPON_CODE_BUTTON;
+import static com.deosite.tests.pages.CheckoutPage.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class DeleteCouponCodeOnCheckoutPage {
 
@@ -57,6 +52,7 @@ public class DeleteCouponCodeOnCheckoutPage {
         theActorInTheSpotlight().attemptsTo(
                 FillInBillingData.type(userType),
                 Click.on(SUBMIT_BUTTON),
+                WaitUntil.the(PICKUP_POINT_SELECT, isNotPresent()),
                 WaitUntil.the(PaymentPage.DELETE_COUPON_CODE_BUTTON, isPresent())
         );
     }

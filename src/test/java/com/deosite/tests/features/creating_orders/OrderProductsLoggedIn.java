@@ -41,14 +41,38 @@ public class OrderProductsLoggedIn {
     @Steps
     SetupSteps setupSteps;
 
-    @Given("that {word} is logged in")
-    public void that_actor_is_logged_in(String actor) {
+    @Given("that {word} is logged in on account1")
+    public void that_actor_is_logged_in1(String actor) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 WaitUntil.the(LOGIN_BUTTON, isPresent()),
                 Open.loginPage(),
                 WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds(),
-                FillInLoginForm.type("login"),
+                FillInLoginForm.type("login to order_1"),
+                SubmitLoginForm.submitLoginForm(),
+                WaitUntil.the(SEARCH_BAR, isPresent())
+        );
+    }
+    @Given("that {word} is logged in on account2")
+    public void that_actor_is_logged_in2(String actor) {
+        theActorCalled(actor).wasAbleTo(
+                Setup.site(),
+                WaitUntil.the(LOGIN_BUTTON, isPresent()),
+                Open.loginPage(),
+                WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds(),
+                FillInLoginForm.type("login to order_2"),
+                SubmitLoginForm.submitLoginForm(),
+                WaitUntil.the(SEARCH_BAR, isPresent())
+        );
+    }
+    @Given("that {word} is logged in on account3")
+    public void that_actor_is_logged_in3(String actor) {
+        theActorCalled(actor).wasAbleTo(
+                Setup.site(),
+                WaitUntil.the(LOGIN_BUTTON, isPresent()),
+                Open.loginPage(),
+                WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds(),
+                FillInLoginForm.type("login to order_3"),
                 SubmitLoginForm.submitLoginForm(),
                 WaitUntil.the(SEARCH_BAR, isPresent())
         );

@@ -36,8 +36,34 @@ public class AddProductToCartAndOrder {
     @Steps
     SetupSteps setupSteps;
 
-    @Given("that {word} adds product to cart")
-    public void that_actor_adds_product_to_cart(String actor) {
+    @Given("that {word} adds product to cart on account1")
+    public void that_actor_adds_product_to_cart1(String actor) {
+        theActorCalled(actor).wasAbleTo(
+                Setup.site(),
+                ClickCategory.byCategoryNumber(5),
+                Open.productPageByPosition(7),
+                //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
+                AddProduct.toCart(),
+                MoveMouseDown.move(),
+                Scroll.to(MiniCart.MINICART_BUTTON)
+                //WaitUntil.the(MainMenu.SEARCH_BAR, isPresent())
+        );
+    }
+    @Given("that {word} adds product to cart on account2")
+    public void that_actor_adds_product_to_cart2(String actor) {
+        theActorCalled(actor).wasAbleTo(
+                Setup.site(),
+                ClickCategory.byCategoryNumber(5),
+                Open.productPageByPosition(7),
+                //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
+                AddProduct.toCart(),
+                MoveMouseDown.move(),
+                Scroll.to(MiniCart.MINICART_BUTTON)
+                //WaitUntil.the(MainMenu.SEARCH_BAR, isPresent())
+        );
+    }
+    @Given("that {word} adds product to cart on account3")
+    public void that_actor_adds_product_to_cart3(String actor) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),

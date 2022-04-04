@@ -17,14 +17,13 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
-import static com.deosite.tests.pages.CheckoutPage.DELETE_COUPON_CODE_BUTTON;
-import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
-import static com.deosite.tests.pages.CheckoutPage.APPLY_COUPON_CODE_BUTTON;
+import static com.deosite.tests.pages.CheckoutPage.*;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_BUTTON;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_INPUT;
 import static com.deosite.tests.pages.ProductPage.ADD_TO_CART_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class DeleteCouponCodeOnPaymentPage {
@@ -48,6 +47,7 @@ public class DeleteCouponCodeOnPaymentPage {
                 FillInBillingData.type(userType),
                 Click.on(SUBMIT_BUTTON),
                 WaitUntil.the(COUPON_CODE_BUTTON, isPresent()),
+                WaitUntil.the(DELIVERY_TYPE_PICKUP_POINT, isNotPresent()),
                 Click.on(COUPON_CODE_BUTTON),
                 SendKeys.of("ABC123").into(COUPON_CODE_INPUT),
                 Click.on(APPLY_COUPON_CODE_BUTTON)
