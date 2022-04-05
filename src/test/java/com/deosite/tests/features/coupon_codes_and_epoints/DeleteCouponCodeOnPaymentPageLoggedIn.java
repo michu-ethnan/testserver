@@ -80,8 +80,7 @@ public class DeleteCouponCodeOnPaymentPageLoggedIn {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(COUPON_CODE_INPUT, isPresent()),
                 Ensure.that(DELETE_COUPON_CODE_BUTTON).isNotDisplayed(),
-                Click.on(CheckoutPage.DELETE_PRODUCT_BUTTON_AFTER_COUPON_CODE),
-                WaitUntil.the(CheckoutPage.DELETE_PRODUCT_BUTTON_AFTER_COUPON_CODE, isNotPresent()).forNoMoreThan(50).seconds()
+                Click.on(CheckoutPage.DELETE_PRODUCT_BUTTON_AFTER_COUPON_CODE)
         );
     }
 }

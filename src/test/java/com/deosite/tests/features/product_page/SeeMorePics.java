@@ -10,10 +10,13 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.ProductPage.LEFT_ARROW;
 import static com.deosite.tests.pages.ProductPage.RIGHT_ARROW;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -32,8 +35,8 @@ public class SeeMorePics {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(0),
-                Open.productPageByPosition(0),
-                WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent())
+                Open.productPageByPosition(9),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );
     }
 
@@ -41,6 +44,7 @@ public class SeeMorePics {
     public void actor_clicks_the_right_arrow() {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(RIGHT_ARROW, isPresent()),
+                MoveMouse.to(RIGHT_ARROW),
                 Click.on(RIGHT_ARROW)
         );
     }

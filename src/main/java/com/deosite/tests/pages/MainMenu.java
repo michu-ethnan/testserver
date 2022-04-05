@@ -14,6 +14,12 @@ public class MainMenu {
     public static Target CATEGORY_LIST = Target.the("Category list").locatedBy("(//div[@data-test='main-categories'])[2]/button");
     public static Target SUBCATEGORY_LIST = Target.the("Subcategory list").locatedBy("//div[@class='css-1nwe63y']/div[@class='css" +
             "-u7kr1c']");
+
+
+    public static Target NEWSLETTER_POPUP = Target.the("newsletter popup").locatedBy("//*[@id=\"__layers__\"]/div/div[2]/div/div[3]/div/div/div/div");
+
+    public static Target NEWSLETTER_POPUP_CLOSE_BUTTON = Target.the("newsletter popup close button").locatedBy("//*[@id=\"__layers__\"]/div/div[2]/div/div[3]/div/div/div/div/div[2]/div[1]");
+
     public static Target SEARCH_RESULTS_BOX = Target.the("Search results box").locatedBy("//div[@class='css-1d41y14']");
 }
 

@@ -19,10 +19,10 @@ import net.thucydides.core.annotations.Steps;
 import java.math.BigDecimal;
 
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.MiniCart.GO_TO_CHECKOUT_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class AddTwoDifferentProductsAndCalculateTotalSum {
 
@@ -37,17 +37,18 @@ public class AddTwoDifferentProductsAndCalculateTotalSum {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(7),
-                AddProduct.toCart(),
-                WaitUntil.the(ALERT_BOX, isNotVisible()),
-                ReturnToPreviousPage.goToPreviousPage(),
                 Open.productPageByPosition(8),
                 AddProduct.toCart(),
-                MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
-                WaitUntil.the(ALERT_BOX, isNotVisible()).forNoMoreThan(100).seconds(),
+                ReturnToPreviousPage.goToPreviousPage(),
+                Open.productPageByPosition(7),
+                AddProduct.toCart(),
+                WaitUntil.the(ALERT_BOX, isNotPresent()),
+                /* MoveMouseDown.move(),
+               Scroll.to(MiniCart.MINICART_BUTTON),
+                WaitUntil.the(ALERT_BOX, isNotVisible()).forNoMoreThan(100).seconds(),*/
                 Open.miniCart(),
-                WaitUntil.the(MiniCart.PRODUCT_PRICE_LIST, isPresent()).forNoMoreThan(100).seconds()
+                WaitUntil.the(MiniCart.PRODUCT_PRICE_LIST, isPresent()).forNoMoreThan(100).seconds(),
+                WaitUntil.the(GO_TO_CHECKOUT_BUTTON, isClickable())
         );
     }
 

@@ -48,7 +48,7 @@ public class DeleteFromCartAndCheckTotalSum {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(7),
+                Open.productPageByPosition(1),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),

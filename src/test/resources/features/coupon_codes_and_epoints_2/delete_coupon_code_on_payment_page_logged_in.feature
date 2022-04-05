@@ -1,4 +1,4 @@
-Feature: Delete a coupon code on the payment page
+Feature: Delete a coupon code on the payment page logged in
 
   A logged in customer should be able to delete a coupon code on the payment page.
 

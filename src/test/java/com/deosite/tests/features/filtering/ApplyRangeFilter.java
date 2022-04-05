@@ -17,6 +17,7 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
@@ -48,6 +49,7 @@ public class ApplyRangeFilter {
                 SendKeys.of("10,50").into(CategoryPage.PRICE_FILTER_INPUT),
                 WaitUntil.the(CategoryPage.FILTER_BUTTON, isPresent()).forNoMoreThan(50).seconds(),
                 Click.on(CategoryPage.FILTER_BUTTON),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 WaitUntil.the(CategoryPage.APPLIED_FILTER_BOX, isVisible())
         );
     }
@@ -60,6 +62,7 @@ public class ApplyRangeFilter {
                 Clear.field(CategoryPage.PRICE_FILTER_INPUT),
                 SendKeys.of("10.50").into(CategoryPage.PRICE_FILTER_INPUT),
                 Click.on(CategoryPage.FILTER_BUTTON),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 WaitUntil.the(CategoryPage.APPLIED_FILTER_BOX, isVisible())
         );
     }

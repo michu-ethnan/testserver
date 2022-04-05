@@ -67,7 +67,7 @@ public class LogInAndSubmitOrder {
                 WaitUntil.the(SEARCH_BAR, isPresent()),
                 ClickCategory.byCategoryNumber(5),
                 WaitUntil.the(HomePage.DAJAR_LOGO, isPresent()),
-                Open.productPageByPosition(9),
+                Open.productPageByPosition(7),
                 //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),

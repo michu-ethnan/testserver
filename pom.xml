@@ -257,23 +257,23 @@
                         <configuration>
                             <includes>
                                <include>**/CheckoutSuite*.java</include>
-                                <include>**/OrderingTestSuite_1*.java</include>
                                 <include>**/OrderingTestSuite_2*.java</include>
-                                <include>**/OrderingTestSuite_3*.java</include>-->
-                                <include>**/OrderingLoggedInSuite_1*.java</include>
-                                <include>**/OrderingLoggedInSuite_2*.java</include>
-                                <include>**/OrderingLoggedInSuite_3*.java</include>
-                             <include>**/FilteringTestSuite*.java</include>
-                                <include>**/LoggingInSuite*.java</include>
-                                <include>**/NavigatingWebsiteSuite*.java</include>
-                                <include>**/RegisteringSuite*.java</include>
-                               <include>**/SortingSuite*.java</include>
-                               <include>**/UsingMinicartSuite_1*.java</include>
-                                <include>**/UsingMinicartSuite_2*.java</include>
-                                <include>**/UsingMyAccountSuite*.java</include>
-                               <include>**/ProductPageSuite*.java</include>
-                               <include>**/CouponCodeSuite_1*.java</include>
-                                <include>**/CouponCodeSuite_2*.java</include>
+                                <include>**/OrderingTestSuite_2*.java</include>
+                                 <include>**/OrderingTestSuite_3*.java</include>
+                                 <include>**/OrderingLoggedInSuite_1*.java</include>
+                                 <include>**/OrderingLoggedInSuite_2*.java</include>
+                                 <include>**/OrderingLoggedInSuite_3*.java</include>
+                              <include>**/FilteringTestSuite*.java</include>
+                               <include>**/LoggingInSuite*.java</include>
+                                 <include>**/NavigatingWebsiteSuite*.java</include>
+                                 <include>**/RegisteringSuite*.java</include>
+                                <include>**/SortingSuite*.java</include>
+                                <include>**/UsingMinicartSuite_1*.java</include>
+                                 <include>**/UsingMinicartSuite_2*.java</include>
+                               <include>**/UsingMyAccountSuite*.java</include>
+                                 <include>**/ProductPageSuite*.java</include>
+                                 <include>**/CouponCodeSuite_1*.java</include>
+                                  <include>**/CouponCodeSuite_2*.java</include>
                             </includes>
                             <parallel>suites</parallel>
                             <threadCount>20</threadCount>

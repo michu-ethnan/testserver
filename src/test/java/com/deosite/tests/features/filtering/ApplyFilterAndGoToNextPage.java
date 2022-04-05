@@ -14,17 +14,18 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.pages.CategoryPage.CATEGORY_HEADER;
 import static com.deosite.tests.pages.CategoryPage.SUBMIT_FILTER_BUTTON;
 import static com.deosite.tests.pages.CategoryPage.PAGINATION_ARROW;
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 import static org.hamcrest.CoreMatchers.containsString;
 
 public class ApplyFilterAndGoToNextPage {
@@ -62,7 +63,9 @@ public class ApplyFilterAndGoToNextPage {
         theActorInTheSpotlight().attemptsTo(
                 ClickFilterButton.number(0),
                 ClickSelectedFilter.number(0),
-                Click.on(SUBMIT_FILTER_BUTTON)
+                Click.on(SUBMIT_FILTER_BUTTON),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
+                Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
         );
     }
 
@@ -71,7 +74,9 @@ public class ApplyFilterAndGoToNextPage {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(PAGINATION_ARROW, isClickable()).forNoMoreThan(100).seconds(),
                 Click.on(PAGINATION_ARROW),
-                WaitUntil.the(PAGINATION_ARROW, isClickable())
+                WaitUntil.the(PAGINATION_ARROW, isClickable()),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
+                Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
         );
     }
 

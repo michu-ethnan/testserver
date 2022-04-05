@@ -19,13 +19,12 @@ import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.pages.CategoryPage.APPLIED_FILTER_BOX;
 import static com.deosite.tests.pages.CategoryPage.PAGINATION_ARROW;
-import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
+import static com.deosite.tests.pages.MainMenu.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 import static org.hamcrest.CoreMatchers.containsString;
 
 public class ApplyRangeFilterRefreshAndGoToNextPage {
@@ -59,7 +58,9 @@ public class ApplyRangeFilterRefreshAndGoToNextPage {
     @And("she hits the refresh button")
     public void actor_hits_the_refresh_button() {
         theActorInTheSpotlight().attemptsTo(
-                RefreshPage.refresh()
+                RefreshPage.refresh(),
+                WaitUntil.the(NEWSLETTER_POPUP, isPresent()),
+                Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON)
         );
     }
 
@@ -69,6 +70,7 @@ public class ApplyRangeFilterRefreshAndGoToNextPage {
                 WaitUntil.the(APPLIED_FILTER_BOX, isPresent()).forNoMoreThan(50).seconds(),
                 WaitUntil.the(PAGINATION_ARROW, isClickable()),
                 Click.on(PAGINATION_ARROW),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 WaitUntil.the(PAGINATION_ARROW, isClickable()),
                 WaitUntil.the(APPLIED_FILTER_BOX, isPresent())
         );

@@ -50,12 +50,12 @@ public class CalculateTotalSumInMinicart {
     public void actor_calculates_the_total_sum_in_minicart() {
         theActorInTheSpotlight().attemptsTo(
                 AddProduct.toCart(),
-                MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
-                Open.miniCart(),
                 WaitUntil.the(ALERT_BOX, isNotVisible()),
+              /*  MoveMouseDown.move(),
+                Scroll.to(MiniCart.MINICART_BUTTON),*/
+                Open.miniCart(),
                 Click.on(QUANTITY_PICKER),
-                IncreaseNumberOfProducts.byAmountNumber(1),
+                IncreaseNumberOfProducts.byAmountNumber(3),
                 WaitUntil.the(GO_TO_CHECKOUT_BUTTON, isClickable()),
                 WaitUntil.the(MINICART_LOADER, isNotPresent())
         );
@@ -65,7 +65,7 @@ public class CalculateTotalSumInMinicart {
     public void actor_should_see_that_it_is_correct() {
         BigDecimal totalSum =
                 com.deosite.tests.questions.minicart.TotalSumInMinicart.sum().answeredBy(theActorInTheSpotlight());
-        BigDecimal numberOfProducts = new BigDecimal(2);
+        BigDecimal numberOfProducts = new BigDecimal(4);
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(totalSum).isEqualTo(productPrice.multiply(numberOfProducts))
         );
