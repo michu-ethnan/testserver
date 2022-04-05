@@ -257,7 +257,7 @@
                         <configuration>
                             <includes>
                                <include>**/CheckoutSuite*.java</include>
-                                <include>**/OrderingTestSuite_2*.java</include>
+                                <include>**/OrderingTestSuite_1*.java</include>
                                 <include>**/OrderingTestSuite_2*.java</include>
                                  <include>**/OrderingTestSuite_3*.java</include>
                                  <include>**/OrderingLoggedInSuite_1*.java</include>

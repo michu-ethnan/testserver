@@ -54,7 +54,7 @@ public class AddProductToCartAndOrder {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(7),
+                Open.productPageByPosition(9),
                 //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),
@@ -67,7 +67,7 @@ public class AddProductToCartAndOrder {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(7),
+                Open.productPageByPosition(10),
                 //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),

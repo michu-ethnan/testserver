@@ -5,6 +5,7 @@ import com.deosite.tests.pages.*;
 import com.deosite.tests.questions.order.Success;
 import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
+import com.deosite.tests.tasks.basic.AcceptCookies;
 import com.deosite.tests.tasks.login.FillInLoginForm;
 import com.deosite.tests.tasks.login.SubmitLoginForm;
 import com.deosite.tests.tasks.order.GoToCheckout;
@@ -140,5 +141,6 @@ public class OrderProductsLoggedIn {
                         as(theActorInTheSpotlight()).translate("additional success info")
                 ))
         );
+
     }
 }
