@@ -20,6 +20,7 @@ com/deosite/tests/NavigatingWebsiteSuite.class
 com/deosite/tests/features/coupon_codes_and_epoints/DeleteCouponCodeOnCheckoutPageLoggedIn.class
 com/deosite/tests/features/creating_orders/AddProductToCartAndOrder.class
 com/deosite/tests/OrderingLoggedInSuite_3.class
+com/deosite/tests/features/product_page/ReturnAfterClickingConfigurableProduct.class
 com/deosite/tests/RegisteringSuite.class
 com/deosite/tests/features/filtering/ClearFilter.class
 com/deosite/tests/features/sorting/SortProductsAndGoToNextPage.class
