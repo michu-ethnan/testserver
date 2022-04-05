@@ -6,7 +6,7 @@ Feature: Order products logged in-2
 
 
 
-  Scenario: Should be able to
+  Scenario: 7
 
     Given that Oscar is logged in on account2
     When he orders "mug" using courier delivery
@@ -14,7 +14,7 @@ Feature: Order products logged in-2
     And he pays using pickup
     Then he should place order
 
-  Scenario: Should be able to
+  Scenario: 8
 
     Given that Oscar is logged in on account2
     When he orders "mug" using pickup delivery
@@ -22,23 +22,23 @@ Feature: Order products logged in-2
     And he uses sandbox
     Then he should place order
 
-  Scenario: Should be able to
+  Scenario: 9
 
     Given that Oscar is logged in on account2
     When he orders "mug" using pickup delivery
     And he pays using transfer
     Then he should place order
 
-  Scenario: Should be able to
+  Scenario: 10
 
     Given that Oscar is logged in on account2
     When he orders "mug" using pickup delivery
     And he changes billing address
-    And he pays using card
+    And he pays using pickup
     And he uses sandbox
     Then he should place order
 
-  Scenario: Should be able to
+  Scenario: 11
 
     Given that Oscar is logged in on account2
     When he orders "mug" using pickup delivery
@@ -46,17 +46,17 @@ Feature: Order products logged in-2
     And he pays using transfer
     Then he should place order
 
-  Scenario: Should be able to
+  Scenario: 12
 
     Given that Oscar is logged in on account2
     When he orders "mug" using courier delivery
     And he changes billing address
     And he clicks the same shipping address checkbox
-    And he pays using card
+    And he pays using pickup
     And he uses sandbox
     Then he should place order
 
-  Scenario: Should be able to
+  Scenario: 13
     Given that Oscar is logged in on account2
     When he orders "mug" using courier delivery
     And he changes billing address

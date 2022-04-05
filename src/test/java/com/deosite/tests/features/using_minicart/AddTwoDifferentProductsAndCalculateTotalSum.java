@@ -1,3 +1,4 @@
+/*
 package com.deosite.tests.features.using_minicart;
 
 import com.deosite.tests.actions.Open;
@@ -43,9 +44,11 @@ public class AddTwoDifferentProductsAndCalculateTotalSum {
                 Open.productPageByPosition(7),
                 AddProduct.toCart(),
                 WaitUntil.the(ALERT_BOX, isNotPresent()),
-                /* MoveMouseDown.move(),
+                */
+/* MoveMouseDown.move(),
                Scroll.to(MiniCart.MINICART_BUTTON),
-                WaitUntil.the(ALERT_BOX, isNotVisible()).forNoMoreThan(100).seconds(),*/
+                WaitUntil.the(ALERT_BOX, isNotVisible()).forNoMoreThan(100).seconds(),*//*
+
                 Open.miniCart(),
                 WaitUntil.the(MiniCart.PRODUCT_PRICE_LIST, isPresent()).forNoMoreThan(100).seconds(),
                 WaitUntil.the(GO_TO_CHECKOUT_BUTTON, isClickable())
@@ -68,3 +71,4 @@ public class AddTwoDifferentProductsAndCalculateTotalSum {
         );
     }
 }
+*/

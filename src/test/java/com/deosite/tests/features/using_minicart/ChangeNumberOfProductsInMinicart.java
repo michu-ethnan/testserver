@@ -43,8 +43,7 @@ public class ChangeNumberOfProductsInMinicart {
                 WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds(),
                 Open.productPageByPosition(1),
                 AddProduct.toCart(),
-                MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                WaitUntil.the(ALERT_BOX, isNotPresent()),
                 Open.miniCart()
         );
     }
