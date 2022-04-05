@@ -1,4 +1,3 @@
-/*
 package com.deosite.tests.features.using_minicart;
 
 import com.deosite.tests.actions.Open;
@@ -54,4 +53,3 @@ public class AddItemsToCart {
         )));
     }
 }
-*/

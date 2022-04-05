@@ -1,4 +1,3 @@
-/*
 
 package com.deosite.tests.features.using_minicart;
 
@@ -52,10 +51,8 @@ public class CalculateTotalSumInMinicart {
         theActorInTheSpotlight().attemptsTo(
                 AddProduct.toCart(),
                 WaitUntil.the(ALERT_BOX, isNotVisible()),
-              */
-/*  MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),*//*
-
+              /*  MoveMouseDown.move(),
+                Scroll.to(MiniCart.MINICART_BUTTON),*/
                 Open.miniCart(),
                 Click.on(QUANTITY_PICKER),
                 IncreaseNumberOfProducts.byAmountNumber(3),
@@ -75,4 +72,3 @@ public class CalculateTotalSumInMinicart {
     }
 }
 
-*/
