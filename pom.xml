@@ -256,7 +256,7 @@
                         <version>${maven.failsafe-plugin.version}</version>
                         <configuration>
                             <includes>
-                               <include>**/CheckoutSuite*.java</include>
+                              <include>**/CheckoutSuite*.java</include>
                                 <include>**/OrderingTestSuite_1*.java</include>
                                 <include>**/OrderingTestSuite_2*.java</include>
                                  <include>**/OrderingTestSuite_3*.java</include>
