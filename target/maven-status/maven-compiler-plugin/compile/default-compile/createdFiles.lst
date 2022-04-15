@@ -43,6 +43,7 @@ com/deosite/tests/pages/CardPaymentPage.class
 com/deosite/tests/tasks/categoryPage/SelectSortingOption.class
 com/deosite/tests/tasks/order/ChooseDelivery.class
 com/deosite/tests/model/order/Personal.class
+com/deosite/tests/tasks/order/SelectBillingAddress.class
 com/deosite/tests/actions/OpenSubcategory.class
 com/deosite/tests/tasks/order/FillInBillingDataWithoutEmailAddress.class
 com/deosite/tests/model/order/Basic.class
@@ -80,6 +81,7 @@ com/deosite/tests/tasks/account/FillInAddressForm.class
 com/deosite/tests/pages/BrandPage.class
 com/deosite/tests/tasks/order/GoToCheckout.class
 com/deosite/tests/tasks/register/FillInRegisterForm.class
+com/deosite/tests/tasks/order/SelectPickUpLocation.class
 com/deosite/tests/i18n/Bundle_ro_RO.class
 com/deosite/tests/model/order/OrderWithoutEmailAddress.class
 com/deosite/tests/tasks/login/FillInLoginFormWithDifferentEmailAddress.class
@@ -128,6 +130,7 @@ com/deosite/tests/tasks/login/SubmitLoginForm.class
 com/deosite/tests/tasks/login/FillInLoginForm.class
 com/deosite/tests/questions/account/OrderImage.class
 com/deosite/tests/pages/SearchPage.class
+com/deosite/tests/tasks/order/SelectShippingAddress.class
 com/deosite/tests/model/minicart/ChangeQuantity.class
 com/deosite/tests/questions/login/Value.class
 com/deosite/tests/tasks/categoryPage/SelectPageNumber.class
@@ -136,4 +139,5 @@ com/deosite/tests/pages/CategoryTopBanner.class
 com/deosite/tests/questions/payment/GetCartValueOnPaymentPage.class
 com/deosite/tests/pages/ProductPage.class
 com/deosite/tests/actions/OpenCategoryPage.class
+com/deosite/tests/tasks/order/SelectBillingCountry.class
 com/deosite/tests/i18n/Bundle_cs_CZ.class

@@ -35,7 +35,7 @@ public class DeleteCouponCodeOnPaymentPage {
     public void actor_attempts_to_apply_a_coupon_code(String actor, String userType) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(6),
                 Open.productPageByPosition(7),
                 WaitUntil.the(ADD_TO_CART_BUTTON, isPresent()),
                 AddProduct.toCart(),

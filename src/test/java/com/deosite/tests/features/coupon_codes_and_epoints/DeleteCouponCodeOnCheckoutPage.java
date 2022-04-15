@@ -32,7 +32,7 @@ public class DeleteCouponCodeOnCheckoutPage {
     public void that_actor_applied_a_coupon_code(String actor) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(7),
                 Open.productPageByPosition(7),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),

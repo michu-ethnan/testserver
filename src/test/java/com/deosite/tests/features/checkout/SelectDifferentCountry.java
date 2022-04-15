@@ -6,6 +6,7 @@ import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
 import com.deosite.tests.tasks.mainMenu.ClickCategory;
 import com.deosite.tests.tasks.order.FillInBillingData;
+import com.deosite.tests.tasks.order.SelectBillingCountry;
 import com.deosite.tests.tasks.product.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -16,12 +17,11 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
-import static com.deosite.tests.pages.CheckoutPage.EMAIL_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
+import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.CheckoutPage.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class SelectDifferentCountry {
 
@@ -43,18 +43,28 @@ public class SelectDifferentCountry {
         );
     }
 
-    @When("she chooses country as a {word}")
-    public void actor_chooses_a_country(String userType) {
+    @When("she chooses Portugal as a {word}")
+    public void actor_chooses_Portugal(String userType) {
         theActorInTheSpotlight().attemptsTo(
-                FillInBillingData.type(userType)
+                FillInBillingData.type(userType),
+                Click.on(COUNTRY_BILLING_INPUT),
+                SelectBillingCountry.byCountry(16)
+        );
+    }
+    @When("she chooses Ireland as a {word}")
+    public void actor_chooses_Ireland(String userType) {
+        theActorInTheSpotlight().attemptsTo(
+                FillInBillingData.type(userType),
+                Click.on(COUNTRY_BILLING_INPUT),
+                SelectBillingCountry.byCountry(9)
         );
     }
 
     @And("clicks the payment page button")
     public void clicks_the_payment_page_button() {
         theActorInTheSpotlight().attemptsTo(
-                Click.on(SUBMIT_BUTTON),
-                WaitUntil.the(SUBMIT_BUTTON, isClickable())
+                WaitUntil.the(SUBMIT_BUTTON, isClickable()),
+                Click.on(SUBMIT_BUTTON)
         );
     }
 

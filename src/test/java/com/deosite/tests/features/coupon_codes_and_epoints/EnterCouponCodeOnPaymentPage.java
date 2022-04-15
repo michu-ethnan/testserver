@@ -22,6 +22,8 @@ import net.thucydides.core.annotations.Steps;
 import static com.deosite.tests.pages.CheckoutPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.APPLY_COUPON_CODE_BUTTON;
+import static com.deosite.tests.pages.MainMenu.NEWSLETTER_POPUP;
+import static com.deosite.tests.pages.MainMenu.NEWSLETTER_POPUP_CLOSE_BUTTON;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_BUTTON;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_INPUT;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -37,7 +39,7 @@ public class EnterCouponCodeOnPaymentPage {
     public void that_actor_happens_to_be_on_the_payment_page(String actor) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(7),
                 Open.productPageByPosition(7),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
@@ -72,6 +74,8 @@ public class EnterCouponCodeOnPaymentPage {
     public void actor_refreshes_the_payment_page() {
         theActorInTheSpotlight().attemptsTo(
                 RefreshPage.refresh(),
+                WaitUntil.the(NEWSLETTER_POPUP, isPresent()),
+                Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                 WaitUntil.the(PaymentPage.DELETE_COUPON_CODE_BUTTON, isPresent())
         );
     }

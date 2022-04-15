@@ -44,7 +44,6 @@ public class FillInShippingData implements Task {
             );
         }
 
-        COUNTRY_SHIPPING_INPUT.resolveFor(actor).selectByVisibleText(order.getCountry());
 
         actor.attemptsTo(
                 SendKeys.of(order.getName()).into(NAME_SHIPPING_INPUT),

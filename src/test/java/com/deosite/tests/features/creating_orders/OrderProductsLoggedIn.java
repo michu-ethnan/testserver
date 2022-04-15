@@ -8,13 +8,7 @@ import com.deosite.tests.tasks.Setup;
 import com.deosite.tests.tasks.basic.AcceptCookies;
 import com.deosite.tests.tasks.login.FillInLoginForm;
 import com.deosite.tests.tasks.login.SubmitLoginForm;
-import com.deosite.tests.tasks.order.GoToCheckout;
-import com.deosite.tests.tasks.order.ChooseDelivery;
-import com.deosite.tests.tasks.order.ChangeBillingAddress;
-import com.deosite.tests.tasks.order.ChangeShippingAddress;
-import com.deosite.tests.tasks.order.PayAfterLogin;
-import com.deosite.tests.tasks.order.PlaceAfterLogin;
-import com.deosite.tests.tasks.order.CardPayment;
+import com.deosite.tests.tasks.order.*;
 import com.deosite.tests.tasks.product.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -27,6 +21,7 @@ import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
 import static com.deosite.tests.pages.CheckoutPage.SHIPPING_ADDRESS_IS_THE_SAME_CHECKBOX;
+import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.pages.LoginPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON_AFTER_LOGIN;
@@ -34,6 +29,7 @@ import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -98,7 +94,9 @@ public class OrderProductsLoggedIn {
     @And("he changes billing address")
     public void actor_changes_billing_address() {
         theActorInTheSpotlight().attemptsTo(
-                ChangeBillingAddress.changeBillingAddress());
+                Click.on(CheckoutPage.BILLING_ADDRESS_SELECT),
+                SelectBillingAddress.byBillingAddress(1)
+        );
     }
 
     @And("he clicks the same shipping address checkbox")
@@ -112,7 +110,10 @@ public class OrderProductsLoggedIn {
     @And("he changes shipping address")
     public void actor_changes_shipping_address() {
         theActorInTheSpotlight().attemptsTo(
-                ChangeShippingAddress.changeShippingAddress());
+                Click.on(CheckoutPage.SHIPPING_ADDRESS_CHECKBOX),
+                Click.on(CheckoutPage.SHIPPING_ADDRESS_SELECT),
+                SelectShippingAddress.byShippingAddress(1)
+        );
     }
 
     @And("he pays using {word}")

@@ -48,7 +48,7 @@ public class DeleteCouponCodeOnCheckoutPageLoggedIn {
     @When("she adds a coupon code")
     public void actor_adds_a_coupon_code() {
         theActorInTheSpotlight().attemptsTo(
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(7),
                 Open.productPageByPosition(7),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
@@ -61,13 +61,16 @@ public class DeleteCouponCodeOnCheckoutPageLoggedIn {
                 WaitUntil.the(COUPON_CODE_INPUT, isPresent()),
                 SendKeys.of("ABC123").into(COUPON_CODE_INPUT),
                 Click.on(APPLY_COUPON_CODE_BUTTON),
-                Click.on(SUBMIT_BUTTON)
+                WaitUntil.the(DELETE_COUPON_CODE_BUTTON, isPresent())
+
         );
     }
 
     @And("she attempts to go to the payment page")
     public void actor_attempts_to_go_to_the_payment_page_as_person() {
         theActorInTheSpotlight().attemptsTo(
+                Click.on(SUBMIT_BUTTON),
+                WaitUntil.the(PICKUP_POINT_SELECT, isNotPresent()),
                 WaitUntil.the(PaymentPage.DELETE_COUPON_CODE_BUTTON, isPresent())
         );
     }

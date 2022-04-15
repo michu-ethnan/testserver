@@ -65,7 +65,7 @@ public class LogInAndSubmitOrder {
     public void actor_makes_an_order(String product, String deliveryType, String paymentType) {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(SEARCH_BAR, isPresent()),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(6),
                 WaitUntil.the(HomePage.DAJAR_LOGO, isPresent()),
                 Open.productPageByPosition(7),
                 //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),

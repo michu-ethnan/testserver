@@ -1,11 +1,9 @@
 com/deosite/tests/features/creating_orders/OrderProductsLoggedIn.class
-com/deosite/tests/features/using_minicart/AddTwoDifferentProductsAndCalculateTotalSum.class
 com/deosite/tests/features/coupon_codes_and_epoints/AddProductAfterApplyingCouponCodeAndCheckThePrice.class
 com/deosite/tests/features/using_my_account/DeleteAddress.class
 com/deosite/tests/OrderingTestSuite_2.class
 com/deosite/tests/features/checkout/RefreshPaymentPage.class
 com/deosite/tests/features/filtering/ApplyRangeFilter.class
-com/deosite/tests/features/using_minicart/CloseCart.class
 com/deosite/tests/features/coupon_codes_and_epoints/EnterCouponCodeOnPaymentPage.class
 com/deosite/tests/ProductPageSuite.class
 com/deosite/tests/features/coupon_codes_and_epoints/ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice.class
@@ -13,7 +11,6 @@ com/deosite/tests/features/login/LogInUsingDifferentEmailAddress.class
 com/deosite/tests/CouponCodeSuite_1.class
 com/deosite/tests/features/registering/RegisterNewAddress.class
 com/deosite/tests/CheckoutSuite.class
-com/deosite/tests/features/using_minicart/CalculateTotalSumInMinicart.class
 com/deosite/tests/FilteringTestSuite.class
 com/deosite/tests/features/registering/RegisterAtCheckout.class
 com/deosite/tests/NavigatingWebsiteSuite.class
@@ -58,10 +55,8 @@ com/deosite/tests/features/login/LogInWithProductsInCart.class
 com/deosite/tests/features/cookies_panel/SeeCookiesPolicy.class
 com/deosite/tests/features/navigating_website/search/SearchByKeyword.class
 com/deosite/tests/features/coupon_codes_and_epoints/EnterCouponCodeWithDiscountHigherThanOrderValue.class
-com/deosite/tests/features/using_minicart/AddItemsToCart.class
 com/deosite/tests/features/using_my_account/AddAddress.class
 com/deosite/tests/features/using_my_account/LogOut.class
 com/deosite/tests/CouponCodeSuite_2.class
 com/deosite/tests/features/sorting/SortingByPriceLowestFirst.class
 com/deosite/tests/features/coupon_codes_and_epoints/EnterCouponCodeOnCheckoutPage.class
-com/deosite/tests/features/using_minicart/DeleteFromCart.class

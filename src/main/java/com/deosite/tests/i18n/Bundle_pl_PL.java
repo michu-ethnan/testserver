@@ -49,9 +49,9 @@ public class Bundle_pl_PL extends ListResourceBundle {
                         "Test-Test",
                         "Testowa 1",
                         "Testowo",
-                        "Polska",
                         "11-111",
                         "123456789"
+
                 )},
                 {"personFromPortugal", new Personal(
                         "test@test.pl",
@@ -59,9 +59,9 @@ public class Bundle_pl_PL extends ListResourceBundle {
                         "Test-Test",
                         "Test 1",
                         "Test",
-                        "Portugalia",
                         "00-000",
                         "0000000000"
+
                 )},
                 {"personFromIreland", new Personal(
                         "test@test.pl",
@@ -69,9 +69,9 @@ public class Bundle_pl_PL extends ListResourceBundle {
                         "Test-Test",
                         "Test 1",
                         "Test",
-                        "Irlandia",
                         "00-000",
                         "0000000000"
+
                 )},
                 {"company", new Company(
                         "test@test.pl",
@@ -79,18 +79,17 @@ public class Bundle_pl_PL extends ListResourceBundle {
                         "Test-Test",
                         "Testowa 1",
                         "Testowo",
-                        "Polska",
                         "11-111",
                         "123456789",
                         "Testowa sp. z o.o",
                         "1234567891"
+
                 )},
                 {"withoutEmailAddress", new WithoutEmailAddress(
                         "Test",
                         "Test-Test",
                         "Test 1",
                         "Test",
-                        "Polska",
                         "00-000",
                         "0000000000"
                 )},

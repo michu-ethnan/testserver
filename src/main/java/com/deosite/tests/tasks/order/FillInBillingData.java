@@ -48,7 +48,7 @@ public class FillInBillingData implements Task {
             );
         }
 
-        COUNTRY_BILLING_INPUT.resolveFor(actor).selectByVisibleText(order.getCountry());
+       /* COUNTRY_BILLING_INPUT.resolveFor(actor).selectByVisibleText(order.getCountry());*/
 
         actor.attemptsTo(
                 SendKeys.of(order.getName()).into(NAME_BILLING_INPUT),

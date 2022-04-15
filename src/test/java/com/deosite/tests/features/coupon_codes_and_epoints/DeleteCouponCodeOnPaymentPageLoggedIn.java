@@ -50,7 +50,7 @@ public class DeleteCouponCodeOnPaymentPageLoggedIn {
     @When("he adds a coupon code on the payment page as {word}")
     public void actor_adds_a_coupon_on_the_payment_page(String userType) {
         theActorInTheSpotlight().attemptsTo(
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(7),
                 Open.productPageByPosition(7),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),

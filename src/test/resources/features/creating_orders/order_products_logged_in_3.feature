@@ -31,7 +31,6 @@ Feature: Order products logged in-3
     Then he should place order
 
 
-
   Scenario: 17
 
     Given that Oscar is logged in on account3

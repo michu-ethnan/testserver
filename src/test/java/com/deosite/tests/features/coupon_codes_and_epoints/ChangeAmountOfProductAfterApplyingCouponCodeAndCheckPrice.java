@@ -45,7 +45,7 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
     public void hanna_applies_coupon_code_on_checkout_page(String actor){
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(6),
                 Open.productPageByPosition(7),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
@@ -65,7 +65,7 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
     public void hanna_applies_coupon_code_on_checkout_page_after_adding_two_products(String actor){
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(6),
                 Open.productPageByPosition(7),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
@@ -91,7 +91,7 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
     public void hanna_applies_coupon_code_on_payment_page(String actor, String userType){
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(6),
                 Open.productPageByPosition(7),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
@@ -117,7 +117,7 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
     public void hanna_applies_coupon_code_on_payment_page_after_adding_two_products(String actor, String userType){
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(6),
                 Open.productPageByPosition(7),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),

@@ -6,13 +6,13 @@ Feature: Select different country
   Scenario: Should be able to
 
     Given that Serena wants to select a billing country
-    When she chooses country as a personFromPortugal
+    When she chooses Portugal as a person
     And clicks the payment page button
     Then she should be on the payment page
 
   Scenario: Should be able to
 
     Given that Serena wants to select a billing country
-    When she chooses country as a personFromIreland
+    When she chooses Ireland as a person
     And clicks the payment page button
     Then she should be on the payment page

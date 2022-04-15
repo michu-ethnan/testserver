@@ -40,7 +40,7 @@ Feature: Add product to cart and order-2
   Scenario: 13
     Given that Adam adds product to cart on account2
     When he attempts to order it as person using pickup delivery
-    And he attempts to pay using transfer
+    And he attempts to pay using card
     And he attempts to use sandbox
     Then the order should be placed
 

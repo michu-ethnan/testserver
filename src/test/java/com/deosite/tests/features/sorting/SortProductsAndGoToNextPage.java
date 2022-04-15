@@ -18,11 +18,11 @@ import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.pages.CategoryPage.CATEGORY_HEADER;
 import static com.deosite.tests.pages.CategoryPage.PAGINATION_ARROW;
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 import static org.hamcrest.CoreMatchers.containsString;
 
 public class SortProductsAndGoToNextPage {
@@ -68,7 +68,8 @@ public class SortProductsAndGoToNextPage {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(PAGINATION_ARROW, isClickable()).forNoMoreThan(50).seconds(),
                 Click.on(PAGINATION_ARROW),
-                WaitUntil.the(PAGINATION_ARROW, isClickable()).forNoMoreThan(50).seconds()
+                WaitUntil.the(PAGINATION_ARROW, isClickable()).forNoMoreThan(50).seconds(),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );
     }
 
