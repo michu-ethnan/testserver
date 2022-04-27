@@ -50,7 +50,7 @@ public class SelectPage {
     public void that_actor_visits_collection_page(String actor) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(8),
+                ClickCategory.byCategoryNumber(9),
                 MoveMouseToTop.move(),
                 ClickBrand.byBrand(0),
                 ClickCollectionBanner.collectionNumber(1)

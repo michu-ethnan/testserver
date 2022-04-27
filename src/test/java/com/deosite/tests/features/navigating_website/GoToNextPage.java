@@ -48,7 +48,7 @@ public class GoToNextPage {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 WaitUntil.the(FIRST_MAIN_CATEGORY, isPresent()).forNoMoreThan(50).seconds(),
-                ClickCategory.byCategoryNumber(8),
+                ClickCategory.byCategoryNumber(9),
                 MoveMouseToTop.move(),
                 ClickBrand.byBrand(0),
                 ClickCollectionBanner.collectionNumber(1)
