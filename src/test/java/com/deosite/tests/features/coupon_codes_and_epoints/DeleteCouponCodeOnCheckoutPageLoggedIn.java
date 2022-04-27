@@ -95,8 +95,10 @@ public class DeleteCouponCodeOnCheckoutPageLoggedIn {
     public void actor_should_see_that_the_code_is_not_visible() {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(COUPON_CODE_INPUT, isPresent()),
+                Ensure.that(LoginPage.SUBMIT_BUTTON).isNotDisplayed(),
                 Ensure.that(DELETE_COUPON_CODE_BUTTON).isNotDisplayed(),
-                Click.on(DELETE_PRODUCT_BUTTON_AFTER_COUPON_CODE)
+                Click.on(DELETE_PRODUCT_BUTTON_AFTER_COUPON_CODE),
+                Ensure.that(DELETE_COUPON_CODE_BUTTON_AFTER_LOGIN).isNotDisplayed()
         );
     }
 }
