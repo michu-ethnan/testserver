@@ -109,6 +109,10 @@ public class Bundle_pl_PL extends ListResourceBundle {
                         "abisimeon223@yandex.com",
                         "Test12345!"
                 )},
+                {"login and submit order", new LoginForm(
+                        "abisimeon2234@yandex.com",
+                        "Test12345!"
+                )},
                 {"differentEmail", new DifferentLoginForm(
                         "tester-tester-terster@yandex.com",
                         "Test12345!"

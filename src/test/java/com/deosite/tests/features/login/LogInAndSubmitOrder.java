@@ -56,7 +56,7 @@ public class LogInAndSubmitOrder {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(LOGIN_BUTTON, isClickable()).forNoMoreThan(100).seconds(),
                 Open.loginPage(),
-                FillInLoginForm.type("login"),
+                FillInLoginForm.type("login and submit order"),
                 SubmitLoginForm.submitLoginForm()
         );
     }

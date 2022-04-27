@@ -59,7 +59,7 @@ public class LogInWithProductsInCart {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(LOGIN_BUTTON, isPresent()).forNoMoreThan(100).seconds(),
                 Open.loginPage(),
-                FillInLoginForm.type("login"),
+                FillInLoginForm.type("login and submit order"),
                 SubmitLoginForm.submitLoginForm(),
                 WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );
@@ -78,5 +78,8 @@ public class LogInWithProductsInCart {
         productInCartAfterLogin = ProductNameInMinicart.productNameInMinicart().answeredBy(theActorInTheSpotlight());
         theActorInTheSpotlight().attemptsTo();
         Ensure.that(productInCartBeforeLogin).isEqualTo(productInCartAfterLogin);
+        theActorInTheSpotlight().attemptsTo(
+                Click.on(MiniCart.DELETE_PRODUCT_BUTTON)
+        );
     }
 }
