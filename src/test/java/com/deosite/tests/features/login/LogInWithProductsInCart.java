@@ -61,6 +61,7 @@ public class LogInWithProductsInCart {
                 Open.loginPage(),
                 FillInLoginForm.type("login and submit order"),
                 SubmitLoginForm.submitLoginForm(),
+
                 WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );
     }
