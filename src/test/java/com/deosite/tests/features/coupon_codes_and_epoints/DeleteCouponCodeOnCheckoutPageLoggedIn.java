@@ -86,6 +86,7 @@ public class DeleteCouponCodeOnCheckoutPageLoggedIn {
     @And("she deletes the coupon code")
     public void actor_deletes_the_coupon_code() {
         theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotPresent()),
                 WaitUntil.the(DELETE_COUPON_CODE_BUTTON, isClickable()),
                 Click.on(DELETE_COUPON_CODE_BUTTON)
         );

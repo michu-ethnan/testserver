@@ -6,6 +6,7 @@ com/deosite/tests/OrderingTestSuite_2.class
 com/deosite/tests/features/checkout/RefreshPaymentPage.class
 com/deosite/tests/features/filtering/ApplyRangeFilter.class
 com/deosite/tests/features/using_minicart/CloseCart.class
+com/deosite/tests/features/coupon_codes_and_epoints/EnterCouponCodeOnPaymentPage.class
 com/deosite/tests/ProductPageSuite.class
 com/deosite/tests/features/coupon_codes_and_epoints/ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice.class
 com/deosite/tests/features/login/LogInUsingDifferentEmailAddress.class
@@ -28,10 +29,12 @@ com/deosite/tests/features/using_minicart/ChangeNumberOfProductsInMinicart.class
 com/deosite/tests/SortingSuite.class
 com/deosite/tests/LoggingInSuite.class
 com/deosite/tests/OrderingLoggedInSuite_2.class
+com/deosite/tests/features/coupon_codes_and_epoints/DeleteCouponCodeOnPaymentPage.class
 com/deosite/tests/OrderingTestSuite_3.class
 com/deosite/tests/features/sorting/SortingByPriceHighestFirst.class
 com/deosite/tests/features/login/LogIn.class
 com/deosite/tests/UsingMinicartSuite_2.class
+com/deosite/tests/features/coupon_codes_and_epoints/DeleteCouponCodeOnCheckoutPage.class
 com/deosite/tests/features/checkout/SelectDifferentCountry.class
 com/deosite/tests/features/filtering/ApplyFilterAndGoToNextPage.class
 com/deosite/tests/CookiesPanelSuite.class
@@ -59,4 +62,5 @@ com/deosite/tests/features/using_my_account/AddAddress.class
 com/deosite/tests/features/using_my_account/LogOut.class
 com/deosite/tests/CouponCodeSuite_2.class
 com/deosite/tests/features/sorting/SortingByPriceLowestFirst.class
+com/deosite/tests/features/coupon_codes_and_epoints/EnterCouponCodeOnCheckoutPage.class
 com/deosite/tests/features/using_minicart/DeleteFromCart.class

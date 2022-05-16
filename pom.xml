@@ -276,8 +276,8 @@
                                  <include>**/CouponCodeSuite_2*.java</include>
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>20</threadCount>
-                            <forkCount>20</forkCount>
+                            <threadCount>9</threadCount>
+                            <forkCount>9</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>
