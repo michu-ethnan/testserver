@@ -65,7 +65,7 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(7),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 WaitUntil.the(SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
@@ -127,7 +127,7 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ReturnToPreviousPage.goToPreviousPage(),
                 Scroll.to(SEARCH_BAR),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(15),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 WaitUntil.the(SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),

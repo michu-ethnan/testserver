@@ -33,7 +33,7 @@ public class SelectDifferentCountry {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(7),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),
                 Scroll.to(MiniCart.MINICART_BUTTON),

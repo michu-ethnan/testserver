@@ -35,7 +35,7 @@ public class AddItemsToCart {
                 Search.forProductByTranslatedKeyword(product),
                 MoveMouseToTop.move(),
                 WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds(),
-                Open.productPageByPosition(7)
+                Open.productPageByPositionRandomly()
         );
     }
 

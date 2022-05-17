@@ -40,7 +40,7 @@ public class EnterCouponCodeOnPaymentPage {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(7),
-                Open.productPageByPosition(7),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),

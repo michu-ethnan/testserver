@@ -36,7 +36,7 @@ public class DeleteCouponCodeOnPaymentPage {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(6),
-                Open.productPageByPosition(7),
+                Open.productPageByPositionRandomly(),
                 WaitUntil.the(ADD_TO_CART_BUTTON, isPresent()),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),

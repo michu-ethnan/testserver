@@ -41,7 +41,7 @@ public class ChangeNumberOfProductsInMinicart {
                 Search.forProductByTranslatedKeyword(product),
                 MoveMouseToTop.move(),
                 WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds(),
-                Open.productPageByPosition(1),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 WaitUntil.the(ALERT_BOX, isNotPresent()),
                 Open.miniCart()

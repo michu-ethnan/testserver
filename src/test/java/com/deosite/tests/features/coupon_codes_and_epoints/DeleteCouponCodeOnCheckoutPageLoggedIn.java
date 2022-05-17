@@ -48,8 +48,8 @@ public class DeleteCouponCodeOnCheckoutPageLoggedIn {
     @When("she adds a coupon code")
     public void actor_adds_a_coupon_code() {
         theActorInTheSpotlight().attemptsTo(
-                ClickCategory.byCategoryNumber(7),
-                Open.productPageByPosition(7),
+                ClickCategory.byCategoryNumber(3),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),

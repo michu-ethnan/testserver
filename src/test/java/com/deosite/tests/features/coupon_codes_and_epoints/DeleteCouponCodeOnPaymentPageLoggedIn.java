@@ -51,7 +51,7 @@ public class DeleteCouponCodeOnPaymentPageLoggedIn {
     public void actor_adds_a_coupon_on_the_payment_page(String userType) {
         theActorInTheSpotlight().attemptsTo(
                 ClickCategory.byCategoryNumber(7),
-                Open.productPageByPosition(7),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),

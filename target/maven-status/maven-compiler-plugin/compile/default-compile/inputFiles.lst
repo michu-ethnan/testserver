@@ -1,3 +1,4 @@
+/home/deosite/testserver/src/main/java/com/deosite/tests/tasks/product/ReturnAndAddAnotherProduct.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/product/LabelName.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/model/login/LoginForm.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/actions/SearchForProducts.java
@@ -88,7 +89,9 @@
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/minicart/MinicartHeader.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/order/Pay.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/categoryPage/ClickSelectedFilter.java
+/home/deosite/testserver/src/main/java/com/deosite/tests/tasks/product/AddProductToCart.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/actions/OpenMiniCart.java
+/home/deosite/testserver/src/main/java/com/deosite/tests/actions/OpenProductPageManually.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/pages/CardPaymentPage.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/SetupWithoutAcceptingCookies.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/account/ClearAddressForm.java
@@ -99,6 +102,7 @@
 /home/deosite/testserver/src/main/java/com/deosite/tests/pages/AccountPage.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/basic/AcceptCookies.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/minicart/MinicartButton.java
+/home/deosite/testserver/src/main/java/com/deosite/tests/actions/OpenProductPageRandomly.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/basic/ReturnToPreviousPage.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/i18n/Bundle_it_IT.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/pages/LoginPage.java

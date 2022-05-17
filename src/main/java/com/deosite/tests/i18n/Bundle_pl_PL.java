@@ -35,7 +35,7 @@ public class Bundle_pl_PL extends ListResourceBundle {
                 // Alerts
                 {"added to cart", "Produkt został dodany do koszyka"},
                 {"address saved", "Adres zapisany"},
-                {"address deleted", "Address deleted"},
+                {"address deleted", "Adres usunięty"},
 
                 // Messages
                 {"success order message", "Dziękujemy, Twoje zamówienie zostało złożone!"},

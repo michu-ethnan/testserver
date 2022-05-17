@@ -42,7 +42,7 @@ public class LogInWithProductsInCart {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(7),
+                Open.productPageByPositionRandomly(),
                 //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
                 AddProduct.toCart()
                // Scroll.to(ProductPage.OTHER_PRODUCTS_HEADING),
