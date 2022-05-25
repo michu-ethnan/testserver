@@ -1,8 +1,8 @@
 package com.deosite.tests.questions.filters;
 
 import com.deosite.tests.pages.CategoryPage;
-import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
 
 public class FilterBox implements Question<String> {
 

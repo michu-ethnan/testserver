@@ -16,6 +16,7 @@
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/registering/OrderAfterRegistration.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/LoggingInSuite.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/login/LogInWithProductsInCart.java
+/home/deosite/testserver/src/test/java/com/deosite/tests/ApplyAllFiltersSuite.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/coupon_codes_and_epoints/EnterCouponCodeOnCheckoutPage.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/filtering/ApplyRangeFilterRefreshAndGoToNextPage.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/OrderingTestSuite_3.java
@@ -24,6 +25,7 @@
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/checkout/SelectDifferentCountry.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/login/LogInUsingDifferentEmailAddress.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/UsingMinicartSuite_1.java
+/home/deosite/testserver/src/test/java/com/deosite/tests/features/filtering/ApplyAllFilters.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/sorting/SortingByPriceLowestFirst.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/using_my_account/AddAddress.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/using_my_account/DeleteAddress.java
@@ -39,6 +41,7 @@
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/navigating_website/GoToNextPage.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/using_my_account/SeeOrder.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/OrderingLoggedInSuite_3.java
+/home/deosite/testserver/src/test/java/com/deosite/tests/BrowseAndOrderFromCategoriesSuite.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/UsingMyAccountSuite.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/coupon_codes_and_epoints/DeleteCouponCodeOnPaymentPage.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/using_minicart/DeleteFromCart.java
@@ -63,4 +66,5 @@
 /home/deosite/testserver/src/test/java/com/deosite/tests/FilteringTestSuite.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/using_minicart/ChangeNumberOfProductsInMinicart.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/features/using_minicart/AddItemsToCart.java
+/home/deosite/testserver/src/test/java/com/deosite/tests/features/creating_orders/BrowseAndOrderFromCategories.java
 /home/deosite/testserver/src/test/java/com/deosite/tests/CheckoutSuite.java

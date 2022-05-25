@@ -1,6 +1,5 @@
 package com.deosite.tests.tasks.order;
 
-import com.deosite.tests.pages.CheckoutPage;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -8,7 +7,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
-import static com.deosite.tests.pages.CheckoutPage.COUNTRY_BILLING_INPUT;
 import static com.deosite.tests.pages.CheckoutPage.COUNTRY_BILLING_INPUT_LIST;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 

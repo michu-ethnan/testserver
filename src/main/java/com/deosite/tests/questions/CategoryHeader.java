@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.annotations.Subject;
 
-import static com.deosite.tests.pages.CategoryTopBanner.CATEGORY_HEADER;
+import static com.deosite.tests.pages.CategoryPage.CATEGORY_HEADER;
 
 @Subject("the displayed category header")
 public class CategoryHeader implements Question<String> {

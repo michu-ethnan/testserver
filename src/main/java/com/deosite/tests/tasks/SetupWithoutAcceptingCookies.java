@@ -1,8 +1,8 @@
 package com.deosite.tests.tasks;
 
 import com.deosite.tests.tasks.basic.OpenTheApplication;
-import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;

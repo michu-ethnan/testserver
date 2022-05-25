@@ -74,7 +74,7 @@ public class EnterCouponCodeOnPaymentPage {
     public void actor_refreshes_the_payment_page() {
         theActorInTheSpotlight().attemptsTo(
                 RefreshPage.refresh(),
-                WaitUntil.the(NEWSLETTER_POPUP, isPresent()),
+                WaitUntil.the(NEWSLETTER_POPUP_CLOSE_BUTTON, isPresent()),
                 Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                 WaitUntil.the(PaymentPage.DELETE_COUPON_CODE_BUTTON, isPresent())
         );

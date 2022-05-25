@@ -1,8 +1,8 @@
 package com.deosite.tests.questions.account;
 
 import com.deosite.tests.pages.AccountPage;
-import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.annotations.Subject;
 import net.serenitybdd.screenplay.questions.Text;
 

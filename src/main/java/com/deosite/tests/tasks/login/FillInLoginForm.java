@@ -3,17 +3,15 @@ package com.deosite.tests.tasks.login;
 import com.deosite.tests.abilities.Load;
 import com.deosite.tests.model.login.LogIn;
 import net.serenitybdd.core.steps.Instrumented;
-
-import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Actor;
-
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SendKeys;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static com.deosite.tests.pages.LoginPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.LoginPage.PASSWORD_INPUT;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class FillInLoginForm implements Task {
 

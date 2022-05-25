@@ -1,8 +1,8 @@
 package com.deosite.tests.tasks.homePage;
 
 import com.deosite.tests.pages.HomePage;
-import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;

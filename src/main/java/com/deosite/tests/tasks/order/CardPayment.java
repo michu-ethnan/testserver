@@ -1,16 +1,12 @@
 package com.deosite.tests.tasks.order;
 
-import com.deosite.tests.pages.CookiesNotification;
 import com.deosite.tests.pages.SuccessPage;
-import com.deosite.tests.tasks.basic.AcceptCookies;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static com.deosite.tests.pages.CardPaymentPage.FIRST_BANK_LOGO;
-import static com.deosite.tests.pages.CardPaymentPage.LOGIN_BUTTON;
-import static com.deosite.tests.pages.CardPaymentPage.PAYMENT_BUTTON;
+import static com.deosite.tests.pages.CardPaymentPage.*;
 import static com.deosite.tests.pages.CookiesNotification.ACCEPT_COOKIES_BUTTON;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
@@ -29,7 +25,6 @@ public class CardPayment implements Task {
                 WaitUntil.the(ACCEPT_COOKIES_BUTTON, isPresent()).forNoMoreThan(50).seconds(),
                 Click.on(ACCEPT_COOKIES_BUTTON),
                 WaitUntil.the(SuccessPage.SUCCESS_ORDER_MESSAGE, isPresent()).forNoMoreThan(100).seconds()
-
         );
     }
 

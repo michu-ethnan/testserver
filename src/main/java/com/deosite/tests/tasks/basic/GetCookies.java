@@ -3,8 +3,8 @@ package com.deosite.tests.tasks.basic;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
 
 import java.util.Set;
 

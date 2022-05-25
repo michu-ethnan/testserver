@@ -1,11 +1,11 @@
 package com.deosite.tests.questions.payment;
 
 import com.deosite.tests.pages.PaymentPage;
-import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.annotations.Subject;
 
-import java.math.*;
+import java.math.BigDecimal;
 
 @Subject("Get total sum on payment page")
 

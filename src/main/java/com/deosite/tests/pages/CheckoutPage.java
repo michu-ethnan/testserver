@@ -8,10 +8,10 @@ public class CheckoutPage {
     public static Target DELIVERY_TYPE_PICKUP_POINT = Target.the("Delivery type pickup point").locatedBy("//div[@data-test='shipping_pickup_point']");
 
     public static Target PICKUP_POINT_SELECT = Target.the("Pickup point select").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div/div/div[1]/form/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/div");
-    public static Target BILLING_ADDRESS_SELECT = Target.the("Address select").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div/div/div[1]/form/div[6]/div/div/div/div");
+    public static Target BILLING_ADDRESS_SELECT = Target.the("Billing address select").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div/div/div[1]/form/div[6]/div/div/div/div");
 
-    public static Target SHIPPING_ADDRESS_CHECKBOX = Target.the("Address select").locatedBy("(//div[@name='shippingAddressSameAsBilling'])[2]");
-    public static Target BILLING_ADDRESS_LIST = Target.the("Address list").locatedBy("//*[@id=\"__layers__\"]//div[@option]");
+    public static Target SHIPPING_ADDRESS_CHECKBOX = Target.the("Shipping address checkbox").locatedBy("(//div[@name='shippingAddressSameAsBilling'])[2]");
+    public static Target BILLING_ADDRESS_LIST = Target.the("Billing address list").locatedBy("//*[@id=\"__layers__\"]//div[@option]");
     public static Target SHIPPING_ADDRESS_SELECT = Target.the("Shipping address select").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div/div/div[1]/form/div[10]/div[1]/div/div/div/div/div/div");
     public static Target SHIPPING_ADDRESS_LIST = Target.the("Shipping address list").locatedBy("//*[@id=\"__layers__\"]//div[@option]");
 

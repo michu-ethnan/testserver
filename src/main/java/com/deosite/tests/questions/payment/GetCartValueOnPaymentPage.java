@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.annotations.Subject;
 
-import java.math.*;
+import java.math.BigDecimal;
 
 @Subject("Get cart value on payment page")
 

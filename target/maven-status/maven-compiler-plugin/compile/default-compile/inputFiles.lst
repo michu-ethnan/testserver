@@ -1,6 +1,7 @@
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/product/ReturnAndAddAnotherProduct.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/product/LabelName.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/model/login/LoginForm.java
+/home/deosite/testserver/src/main/java/com/deosite/tests/tasks/categoryPage/SelectCategory.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/actions/SearchForProducts.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/model/order/OrderWithoutEmailAddress.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/pages/PaymentPage.java
@@ -47,6 +48,7 @@
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/account/LoginButton.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/mainMenu/ClickSubcategory.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/pages/MiniCart.java
+/home/deosite/testserver/src/main/java/com/deosite/tests/questions/filters/FilterName.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/i18n/Bundle_pl_PL.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/basic/OpenTheApplication.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/payment/GetTotalSumOnPaymentPage.java
@@ -95,6 +97,7 @@
 /home/deosite/testserver/src/main/java/com/deosite/tests/pages/CardPaymentPage.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/SetupWithoutAcceptingCookies.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/account/ClearAddressForm.java
+/home/deosite/testserver/src/main/java/com/deosite/tests/tasks/categoryPage/SelectPromotion.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/product/ProductTitleOnSearchPage.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/CategoryHeader.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/order/FillInBillingData.java
@@ -114,6 +117,7 @@
 /home/deosite/testserver/src/main/java/com/deosite/tests/pages/ProductPage.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/order/Przelewy24BankLogo.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/order/SuccessInfo.java
+/home/deosite/testserver/src/main/java/com/deosite/tests/tasks/categoryPage/EnsurePageContent.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/order/PlaceAfterLogin.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/order/SelectBillingCountry.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/product/AddProduct.java
@@ -122,6 +126,7 @@
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/order/GoToCheckout.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/order/PayAfterLogin.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/actions/OpenCategoryPage.java
+/home/deosite/testserver/src/main/java/com/deosite/tests/tasks/categoryPage/ApplyFilters.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/minicart/GetProductPrice.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/register/FillInRegisterForm.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/model/account/NewAddress.java
@@ -143,5 +148,6 @@
 /home/deosite/testserver/src/main/java/com/deosite/tests/model/minicart/ChangeQuantity.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/product/MoveMouseDown.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/tasks/mainMenu/ClickCategory.java
+/home/deosite/testserver/src/main/java/com/deosite/tests/tasks/categoryPage/OpenInspirations.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/actions/OpenSubcategory.java
 /home/deosite/testserver/src/main/java/com/deosite/tests/questions/product/ProductName.java

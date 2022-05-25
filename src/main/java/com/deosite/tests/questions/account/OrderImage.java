@@ -1,7 +1,7 @@
 package com.deosite.tests.questions.account;
 
-import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.annotations.Subject;
 
 import static com.deosite.tests.pages.AccountPage.ORDER_IMAGE;

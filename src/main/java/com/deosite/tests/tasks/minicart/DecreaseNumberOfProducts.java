@@ -1,16 +1,13 @@
 package com.deosite.tests.tasks.minicart;
 
 import net.serenitybdd.core.steps.Instrumented;
-import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
-import static com.deosite.tests.pages.MiniCart.*;
 import static com.deosite.tests.pages.MiniCart.QUANTITY_AMOUNT;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class DecreaseNumberOfProducts implements Task {

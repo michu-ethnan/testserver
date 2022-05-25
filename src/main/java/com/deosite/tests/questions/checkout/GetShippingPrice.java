@@ -1,8 +1,8 @@
 package com.deosite.tests.questions.checkout;
 
 import com.deosite.tests.pages.CheckoutPage;
-import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.annotations.Subject;
 
 import java.math.BigDecimal;

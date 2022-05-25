@@ -8,12 +8,9 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
-import static com.deosite.tests.pages.MainMenu.FIRST_MAIN_CATEGORY;
-
 import static com.deosite.tests.pages.MainMenu.CATEGORY_LIST;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static com.deosite.tests.pages.MainMenu.FIRST_MAIN_CATEGORY;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class ClickCategory implements Interaction {
 

@@ -8,12 +8,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SendKeys;
 import net.thucydides.core.annotations.Step;
 
-import static com.deosite.tests.pages.AccountPage.NAME_INPUT;
-import static com.deosite.tests.pages.AccountPage.LAST_NAME_INPUT;
-import static com.deosite.tests.pages.AccountPage.STREET_INPUT;
-import static com.deosite.tests.pages.AccountPage.CITY_INPUT;
-import static com.deosite.tests.pages.AccountPage.POSTAL_CODE_INPUT;
-import static com.deosite.tests.pages.AccountPage.PHONE_INPUT;
+import static com.deosite.tests.pages.AccountPage.*;
 
 public class FillInAddressForm implements Task {
 

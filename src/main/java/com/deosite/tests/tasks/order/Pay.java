@@ -8,9 +8,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
 import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
-import static com.deosite.tests.pages.PaymentPage.PLACE_ORDER_BUTTON;
-import static com.deosite.tests.pages.PaymentPage.TRANSFER_PAYMENT_CHECKBOX;
-import static com.deosite.tests.pages.PaymentPage.PICKUP_PAYMENT_CHECKBOX;
+import static com.deosite.tests.pages.PaymentPage.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 

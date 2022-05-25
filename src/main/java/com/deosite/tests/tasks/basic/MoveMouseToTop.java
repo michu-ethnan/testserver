@@ -5,8 +5,8 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.thucydides.core.annotations.Step;
 
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class MoveMouseToTop implements Task {
 

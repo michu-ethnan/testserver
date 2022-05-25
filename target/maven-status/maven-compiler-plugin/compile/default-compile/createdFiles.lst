@@ -36,6 +36,7 @@ com/deosite/tests/i18n/Bundle_fr_FR.class
 com/deosite/tests/tasks/minicart/IncreaseNumberOfProducts.class
 com/deosite/tests/tasks/order/Place.class
 com/deosite/tests/tasks/basic/GetCookies.class
+com/deosite/tests/tasks/categoryPage/EnsurePageContent.class
 com/deosite/tests/questions/order/Success.class
 com/deosite/tests/questions/alert/Value.class
 com/deosite/tests/questions/minicart/ProductNameInMinicart.class
@@ -56,6 +57,7 @@ com/deosite/tests/questions/payment/GetTotalSumOnPaymentPage.class
 com/deosite/tests/questions/product/Product.class
 com/deosite/tests/tasks/categoryPage/ClickCollectionBanner.class
 com/deosite/tests/actions/OpenProductPageManually.class
+com/deosite/tests/questions/filters/FilterName.class
 com/deosite/tests/questions/checkout/GetTotalSum.class
 com/deosite/tests/tasks/product/ReturnAndAddAnotherProduct.class
 com/deosite/tests/questions/minicart/EmptyCartMessage.class
@@ -78,6 +80,7 @@ com/deosite/tests/questions/category/CurrentUrl.class
 com/deosite/tests/actions/OpenLoginPage.class
 com/deosite/tests/pages/LoginPage.class
 com/deosite/tests/actions/Hover.class
+com/deosite/tests/tasks/categoryPage/SelectCategory.class
 com/deosite/tests/i18n/Bundle_sv_SE.class
 com/deosite/tests/tasks/filtering/SelectFilter.class
 com/deosite/tests/tasks/account/FillInAddressForm.class
@@ -113,6 +116,7 @@ com/deosite/tests/tasks/minicart/DecreaseNumberOfProducts.class
 com/deosite/tests/tasks/order/FillInBillingData.class
 com/deosite/tests/model/register/RegisterForm.class
 com/deosite/tests/pages/HomePage.class
+com/deosite/tests/tasks/categoryPage/SelectPromotion.class
 com/deosite/tests/tasks/brandPage/ClickBrand.class
 com/deosite/tests/i18n/Bundle_it_IT.class
 com/deosite/tests/model/order/WithoutEmailAddress.class
@@ -131,12 +135,14 @@ com/deosite/tests/tasks/account/SelectOrder.class
 com/deosite/tests/model/login/LogIn.class
 com/deosite/tests/questions/account/LoginButton.class
 com/deosite/tests/tasks/login/SubmitLoginForm.class
+com/deosite/tests/tasks/categoryPage/ApplyFilters.class
 com/deosite/tests/tasks/login/FillInLoginForm.class
 com/deosite/tests/questions/account/OrderImage.class
 com/deosite/tests/pages/SearchPage.class
 com/deosite/tests/tasks/order/SelectShippingAddress.class
 com/deosite/tests/model/minicart/ChangeQuantity.class
 com/deosite/tests/questions/login/Value.class
+com/deosite/tests/tasks/categoryPage/OpenInspirations.class
 com/deosite/tests/tasks/categoryPage/SelectPageNumber.class
 com/deosite/tests/pages/Alert.class
 com/deosite/tests/pages/CategoryTopBanner.class

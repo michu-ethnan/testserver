@@ -6,8 +6,8 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
-import static com.deosite.tests.pages.CheckoutPage.PICKUP_LOCATION_LIST;
 
+import static com.deosite.tests.pages.CheckoutPage.PICKUP_LOCATION_LIST;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class SelectPickUpLocation implements Task {

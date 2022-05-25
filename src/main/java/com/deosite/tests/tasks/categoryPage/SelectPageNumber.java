@@ -8,8 +8,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
 import static com.deosite.tests.pages.CategoryPage.PAGINATION_NUMBER_LIST;
-import static com.deosite.tests.pages.CategoryPage.PAGINATION_SELECT;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class SelectPageNumber implements Task {

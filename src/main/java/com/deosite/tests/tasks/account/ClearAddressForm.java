@@ -1,8 +1,8 @@
 package com.deosite.tests.tasks.account;
 
 import com.deosite.tests.pages.AccountPage;
-import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Clear;
 import net.thucydides.core.annotations.Step;
 

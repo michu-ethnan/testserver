@@ -1,3 +1,4 @@
+com/deosite/tests/features/creating_orders/BrowseAndOrderFromCategories.class
 com/deosite/tests/features/creating_orders/OrderProductsLoggedIn.class
 com/deosite/tests/features/using_minicart/AddTwoDifferentProductsAndCalculateTotalSum.class
 com/deosite/tests/features/coupon_codes_and_epoints/AddProductAfterApplyingCouponCodeAndCheckThePrice.class
@@ -46,6 +47,7 @@ com/deosite/tests/features/login/LogInAndSubmitOrder.class
 com/deosite/tests/CucumberTestSuite.class
 com/deosite/tests/OrderingTestSuite_1.class
 com/deosite/tests/features/using_my_account/EditAddress.class
+com/deosite/tests/BrowseAndOrderFromCategoriesSuite.class
 com/deosite/tests/features/using_my_account/SeeOrder.class
 com/deosite/tests/UsingMinicartSuite_1.class
 com/deosite/tests/features/navigating_website/SelectPage.class
@@ -55,9 +57,11 @@ com/deosite/tests/features/coupon_codes_and_epoints/DeleteCouponCodeOnPaymentPag
 com/deosite/tests/features/filtering/ApplyRangeFilterRefreshAndGoToNextPage.class
 com/deosite/tests/features/product_page/SeeMorePics.class
 com/deosite/tests/features/login/LogInWithProductsInCart.class
+com/deosite/tests/features/filtering/ApplyAllFilters.class
 com/deosite/tests/features/cookies_panel/SeeCookiesPolicy.class
 com/deosite/tests/features/navigating_website/search/SearchByKeyword.class
 com/deosite/tests/features/using_minicart/AddItemsToCart.class
+com/deosite/tests/ApplyAllFiltersSuite.class
 com/deosite/tests/features/using_my_account/AddAddress.class
 com/deosite/tests/features/using_my_account/LogOut.class
 com/deosite/tests/CouponCodeSuite_2.class

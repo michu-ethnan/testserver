@@ -8,9 +8,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
 import static com.deosite.tests.pages.MiniCart.QUANTITY_AMOUNT;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
-
-import static com.deosite.tests.pages.MiniCart.QUANTITY_PICKER;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class IncreaseNumberOfProducts implements Task {

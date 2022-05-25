@@ -1,15 +1,15 @@
 package com.deosite.tests.tasks.order;
 
-import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.*;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static com.deosite.tests.pages.PaymentPage.AGREEMENT_CHECKBOX;
 import static com.deosite.tests.pages.PaymentPage.PLACE_ORDER_BUTTON;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class PlaceAfterLogin implements Task {
 
