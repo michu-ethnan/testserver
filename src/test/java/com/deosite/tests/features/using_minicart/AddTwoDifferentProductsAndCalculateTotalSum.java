@@ -19,7 +19,9 @@ import net.thucydides.core.annotations.Steps;
 import java.math.BigDecimal;
 
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.GO_TO_CHECKOUT_BUTTON;
+import static com.deosite.tests.pages.MiniCart.MINICART_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
@@ -39,13 +41,13 @@ public class AddTwoDifferentProductsAndCalculateTotalSum {
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                MoveMouseDown.move(),
                 ReturnToPreviousPage.goToPreviousPage(),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 WaitUntil.the(ALERT_BOX, isNotPresent()),
-                /* MoveMouseDown.move(),
-               Scroll.to(MiniCart.MINICART_BUTTON),
-                WaitUntil.the(ALERT_BOX, isNotVisible()).forNoMoreThan(100).seconds(),*/
+                MoveMouseDown.move(),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 WaitUntil.the(MiniCart.PRODUCT_PRICE_LIST, isPresent()).forNoMoreThan(100).seconds(),
                 WaitUntil.the(GO_TO_CHECKOUT_BUTTON, isClickable())

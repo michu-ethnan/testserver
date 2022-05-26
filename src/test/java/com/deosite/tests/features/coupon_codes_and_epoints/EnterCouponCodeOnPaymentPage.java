@@ -13,6 +13,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SendKeys;
 import net.serenitybdd.screenplay.ensure.Ensure;
@@ -22,8 +23,7 @@ import net.thucydides.core.annotations.Steps;
 import static com.deosite.tests.pages.CheckoutPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.APPLY_COUPON_CODE_BUTTON;
-import static com.deosite.tests.pages.MainMenu.NEWSLETTER_POPUP;
-import static com.deosite.tests.pages.MainMenu.NEWSLETTER_POPUP_CLOSE_BUTTON;
+import static com.deosite.tests.pages.MainMenu.*;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_BUTTON;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_INPUT;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -39,15 +39,13 @@ public class EnterCouponCodeOnPaymentPage {
     public void that_actor_happens_to_be_on_the_payment_page(String actor) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(7),
+                ClickCategory.byCategoryNumber(4),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
-                Open.checkoutPage(),
-                WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds()
+                Open.checkoutPage()
         );
     }
 

@@ -19,6 +19,7 @@ import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.MINICART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.CLOSE_CART_BUTTON;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -39,10 +40,9 @@ public class CloseCart {
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
-                //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart()
         );
     }

@@ -13,6 +13,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SendKeys;
 import net.serenitybdd.screenplay.ensure.Ensure;
@@ -25,8 +26,7 @@ import static com.deosite.tests.pages.CheckoutPage.COUPON_CODE_INPUT;
 import static com.deosite.tests.pages.CheckoutPage.APPLY_COUPON_CODE_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.DELETE_COUPON_CODE_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
-import static com.deosite.tests.pages.MainMenu.NEWSLETTER_POPUP;
-import static com.deosite.tests.pages.MainMenu.NEWSLETTER_POPUP_CLOSE_BUTTON;
+import static com.deosite.tests.pages.MainMenu.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
@@ -44,9 +44,8 @@ public class EnterCouponCodeOnCheckoutPage {
                 ClickCategory.byCategoryNumber(7),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 Open.checkoutPage(),
                 WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds(),

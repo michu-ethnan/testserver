@@ -31,6 +31,7 @@ import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.CheckoutPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.DELETE_PRODUCT_BUTTON_AT_CHECKOUT;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.*;
 import static com.deosite.tests.pages.PaymentPage.DELETE_PRODUCT_BUTTON_ON_PAYMENT_PAGE;
 import static com.deosite.tests.pages.PaymentPage.PLACE_ORDER_BUTTON;
@@ -50,23 +51,18 @@ public class DeleteFromCartAndCheckTotalSum {
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPosition(7),
                 AddProduct.toCart(),
-                WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
-                /*WaitUntil.the(ALERT_BOX, isNotVisible()),*/
                 ReturnToPreviousPage.goToPreviousPage(),
                 Open.productPageByPosition(10),
                 AddProduct.toCart(),
-                WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
-              /*  WaitUntil.the(ALERT_BOX, isNotVisible()),*/
                 ReturnToPreviousPage.goToPreviousPage(),
                 Open.productPageByPosition(9),
                 AddProduct.toCart(),
-                WaitUntil.the(ALERT_BOX, isNotVisible()),
+                WaitUntil.the(ALERT_BOX, isNotVisible()).forNoMoreThan(50).seconds(),
                 MoveMouseDown.move(),
-                Scroll.to(MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart()
-                //WaitUntil.the(DELETE_PRODUCT_BUTTON, isPresent())
         );
     }
 
@@ -74,8 +70,7 @@ public class DeleteFromCartAndCheckTotalSum {
     public void that_actor_has_three_products_at_checkout() {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(GO_TO_CHECKOUT_BUTTON, isPresent()),
-                Open.checkoutPage(),
-                WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds()
+                Open.checkoutPage()
         );
     }
 

@@ -21,6 +21,7 @@ import net.thucydides.core.annotations.Steps;
 import static com.deosite.tests.abilities.Load.as;
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.*;
 import static com.deosite.tests.pages.SearchPage.PRODUCTS_TITLE;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -43,7 +44,8 @@ public class ChangeNumberOfProductsInMinicart {
                 WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds(),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(ALERT_BOX, isNotPresent()),
+                MoveMouseDown.move(),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart()
         );
     }

@@ -13,6 +13,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SendKeys;
 import net.serenitybdd.screenplay.ensure.Ensure;
@@ -22,6 +23,7 @@ import net.thucydides.core.annotations.Steps;
 import static com.deosite.tests.pages.CheckoutPage.*;
 import static com.deosite.tests.pages.LoginPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -51,9 +53,8 @@ public class DeleteCouponCodeOnCheckoutPageLoggedIn {
                 ClickCategory.byCategoryNumber(3),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 Open.checkoutPage(),
                 WaitUntil.the(COUPON_CODE_BUTTON, isPresent()),
@@ -61,7 +62,8 @@ public class DeleteCouponCodeOnCheckoutPageLoggedIn {
                 WaitUntil.the(COUPON_CODE_INPUT, isPresent()),
                 SendKeys.of("ABC123").into(COUPON_CODE_INPUT),
                 Click.on(APPLY_COUPON_CODE_BUTTON),
-                WaitUntil.the(DELETE_COUPON_CODE_BUTTON, isPresent())
+                WaitUntil.the(DELETE_COUPON_CODE_BUTTON, isClickable()),
+                Ensure.that(DELETE_COUPON_CODE_BUTTON).isEnabled()
 
         );
     }

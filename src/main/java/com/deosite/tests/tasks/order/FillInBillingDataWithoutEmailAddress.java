@@ -8,7 +8,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
+
+import static com.deosite.tests.pages.CheckoutPage.SHIPPING_ADDRESS_IS_THE_SAME_CHECKBOX;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class FillInBillingDataWithoutEmailAddress implements Task {
 
@@ -31,7 +35,8 @@ public class FillInBillingDataWithoutEmailAddress implements Task {
         actor.attemptsTo(SendKeys.of(orderWithoutEmailAddress.getNumber()).into(CheckoutPage.NUMBER_BILLING_INPUT));
 
         actor.attemptsTo(
-                Click.on(CheckoutPage.SHIPPING_ADDRESS_IS_THE_SAME_CHECKBOX)
+                WaitUntil.the(SHIPPING_ADDRESS_IS_THE_SAME_CHECKBOX, isPresent()),
+                Click.on(SHIPPING_ADDRESS_IS_THE_SAME_CHECKBOX)
         );
     }
 

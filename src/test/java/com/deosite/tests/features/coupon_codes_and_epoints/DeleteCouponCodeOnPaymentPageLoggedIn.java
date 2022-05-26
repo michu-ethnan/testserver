@@ -13,6 +13,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SendKeys;
 import net.serenitybdd.screenplay.ensure.Ensure;
@@ -23,6 +24,7 @@ import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.APPLY_COUPON_CODE_BUTTON;
 import static com.deosite.tests.pages.LoginPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
 import static com.deosite.tests.pages.PaymentPage.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -50,12 +52,11 @@ public class DeleteCouponCodeOnPaymentPageLoggedIn {
     @When("he adds a coupon code on the payment page as {word}")
     public void actor_adds_a_coupon_on_the_payment_page(String userType) {
         theActorInTheSpotlight().attemptsTo(
-                ClickCategory.byCategoryNumber(7),
+                ClickCategory.byCategoryNumber(4),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 Open.checkoutPage(),
                 Click.on(SUBMIT_BUTTON),
@@ -80,7 +81,6 @@ public class DeleteCouponCodeOnPaymentPageLoggedIn {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(COUPON_CODE_INPUT, isPresent()),
                 Ensure.that(DELETE_COUPON_CODE_BUTTON).isNotDisplayed(),
-                Ensure.that(LoginPage.SUBMIT_BUTTON).isNotDisplayed(),
                 Click.on(CheckoutPage.DELETE_PRODUCT_BUTTON_AFTER_COUPON_CODE),
                 Ensure.that(CheckoutPage.DELETE_PRODUCT_BUTTON_AFTER_COUPON_CODE).isNotDisplayed()
 

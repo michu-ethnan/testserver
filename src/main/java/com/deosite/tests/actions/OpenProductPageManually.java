@@ -1,5 +1,6 @@
 package com.deosite.tests.actions;
 
+import com.deosite.tests.pages.MainMenu;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
@@ -28,5 +29,9 @@ public class OpenProductPageManually implements Interaction {
                 Click.on(PRODUCTS_TITLE.resolveAllFor(actor).get(position)),
                 WaitUntil.the(ADD_TO_CART_BUTTON, isPresent()).forNoMoreThan(100).seconds()
         );
+        if (MainMenu.NEWSLETTER_POPUP_CLOSE_BUTTON.resolveFor(actor).isPresent()){
+            actor.attemptsTo(
+                    Click.on(MainMenu.NEWSLETTER_POPUP_CLOSE_BUTTON)
+            );}
     }
 }

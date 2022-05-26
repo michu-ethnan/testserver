@@ -15,17 +15,16 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
-import static com.deosite.tests.pages.CheckoutPage.SHIPPING_ADDRESS_IS_THE_SAME_CHECKBOX;
-import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
+import static com.deosite.tests.pages.CheckoutPage.*;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.pages.LoginPage.EMAIL_INPUT;
-import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON_AFTER_LOGIN;
-import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
+import static com.deosite.tests.pages.MainMenu.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -79,14 +78,12 @@ public class OrderProductsLoggedIn {
     public void actor_orders_product_using_chosen_delivery(String product, String deliveryType) {
         theActorInTheSpotlight().attemptsTo(
                 Search.forProductByTranslatedKeyword(product),
-                WaitUntil.the(CategoryPage.PAGINATION_ARROW, isPresent()),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
-                Click.on(MINI_CART_BUTTON_AFTER_LOGIN),
+                MoveMouse.to(MINI_CART_BUTTON),
+                Open.miniCart(),
                 Open.checkoutPage(),
-                WaitUntil.the(CheckoutPage.EMAIL_INPUT, isPresent()).forNoMoreThan(100).seconds(),
                 ChooseDelivery.byType(deliveryType)
         );
     }
@@ -94,6 +91,7 @@ public class OrderProductsLoggedIn {
     @And("he changes billing address")
     public void actor_changes_billing_address() {
         theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(BILLING_ADDRESS_SELECT, isClickable()),
                 Click.on(CheckoutPage.BILLING_ADDRESS_SELECT),
                 SelectBillingAddress.byBillingAddress(1)
         );

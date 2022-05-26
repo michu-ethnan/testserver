@@ -3,6 +3,7 @@ package com.deosite.tests.actions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
@@ -18,6 +19,7 @@ public class OpenCheckoutPage implements Interaction {
 
         actor.attemptsTo(
                 WaitUntil.the(GO_TO_CHECKOUT_BUTTON, isPresent()),
+                Ensure.that(GO_TO_CHECKOUT_BUTTON).isEnabled(),
                 Click.on(GO_TO_CHECKOUT_BUTTON),
                 WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(100).seconds()
         );

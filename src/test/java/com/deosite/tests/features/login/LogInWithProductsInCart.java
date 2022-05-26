@@ -23,6 +23,7 @@ import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -41,16 +42,14 @@ public class LogInWithProductsInCart {
     public void that_actor_added_a_product_to_the_cart(String actor) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(6),
                 Open.productPageByPositionRandomly(),
-                //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
                 AddProduct.toCart()
-               // Scroll.to(ProductPage.OTHER_PRODUCTS_HEADING),
-               // ReturnToPreviousPage.goToPreviousPage()
+
         );
         productInCartBeforeLogin = ProductName.productName().answeredBy(theActorInTheSpotlight());
 
-        theActorCalled(actor).attemptsTo(Scroll.to(ProductPage.OTHER_PRODUCTS_HEADING));
+        theActorCalled(actor).attemptsTo((MoveMouseDown.move()));
         theActorCalled(actor).attemptsTo(ReturnToPreviousPage.goToPreviousPage());
     }
 
@@ -61,7 +60,6 @@ public class LogInWithProductsInCart {
                 Open.loginPage(),
                 FillInLoginForm.type("login and submit order"),
                 SubmitLoginForm.submitLoginForm(),
-
                 WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );
     }
@@ -69,6 +67,7 @@ public class LogInWithProductsInCart {
     @And("opens the minicart")
     public void actor_opens_the_minicart() {
         theActorInTheSpotlight().attemptsTo(
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 WaitUntil.the(MiniCart.GO_TO_CHECKOUT_BUTTON, isPresent()).forNoMoreThan(100).seconds()
         );

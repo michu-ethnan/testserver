@@ -12,15 +12,18 @@ import com.deosite.tests.tasks.categoryPage.SelectPromotion;
 import com.deosite.tests.tasks.mainMenu.ClickCategory;
 import com.deosite.tests.tasks.order.FillInBillingData;
 import com.deosite.tests.tasks.product.AddProduct;
+import com.deosite.tests.tasks.product.MoveMouseDown;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.pages.CategoryPage.*;
 import static com.deosite.tests.pages.CheckoutPage.EMAIL_INPUT;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
@@ -89,6 +92,8 @@ public class BrowseAndOrderFromCategories {
                 Scroll.to(CATEGORY_HEADER),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                MoveMouseDown.move(),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart()
 
         );

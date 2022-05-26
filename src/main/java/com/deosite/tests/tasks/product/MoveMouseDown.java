@@ -15,7 +15,6 @@ public class MoveMouseDown implements Task {
     @Step("{0} moves the mouse down")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(ProductPage.ADD_TO_CART_BUTTON, isPresent()),
                 MoveMouse.to(ProductPage.PRODUCT_THUMBNAIL)
         );
     }

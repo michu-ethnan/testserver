@@ -52,6 +52,7 @@ public class RegisterAtCheckout {
         theActorInTheSpotlight().attemptsTo(
                 SendKeys.of(RandomEmailAddress.randomEmailAddress().answeredBy(theActorInTheSpotlight())).into(CheckoutPage.EMAIL_INPUT),
                 FillInBillingDataWithoutEmailAddress.type(userType),
+                WaitUntil.the(SHIPPING_ADDRESS_IS_THE_SAME_CHECKBOX, isPresent()),
                 Click.on(SHIPPING_ADDRESS_IS_THE_SAME_CHECKBOX)
         );
     }

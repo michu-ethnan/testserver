@@ -28,6 +28,7 @@ import java.math.BigDecimal;
 
 
 import static com.deosite.tests.pages.CheckoutPage.*;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.GO_TO_CHECKOUT_BUTTON;
 import static com.deosite.tests.pages.MiniCart.QUANTITY_PICKER;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -68,7 +69,6 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
                 ClickCategory.byCategoryNumber(6),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
                 Scroll.to(MiniCart.MINICART_BUTTON),
                 Open.miniCart(),
@@ -94,12 +94,10 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
                 ClickCategory.byCategoryNumber(6),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
                 Scroll.to(MiniCart.MINICART_BUTTON),
                 Open.miniCart(),
                 Open.checkoutPage(),
-                WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds(),
                 FillInBillingData.type(userType),
                 Click.on(SUBMIT_BUTTON),
                 WaitUntil.the(CheckoutPage.DELIVERY_TYPE_COURIER, isNotPresent()),
@@ -120,9 +118,8 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
                 ClickCategory.byCategoryNumber(6),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 WaitUntil.the(GO_TO_CHECKOUT_BUTTON, isClickable()),
                 Click.on(QUANTITY_PICKER),

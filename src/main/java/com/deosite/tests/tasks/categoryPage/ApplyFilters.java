@@ -66,6 +66,7 @@ public class ApplyFilters implements Task {
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                     WaitUntil.the(CategoryPage.CATEGORY_HEADER, isPresent()),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
             );
             if (PAGINATION_ARROW.resolveFor(actor).isPresent()){
@@ -75,6 +76,7 @@ public class ApplyFilters implements Task {
                         WaitUntil.the(CATEGORY_HEADER, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                         RefreshPage.refresh(),
+                        WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
                 );
 
@@ -126,6 +128,7 @@ public class ApplyFilters implements Task {
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                     WaitUntil.the(CategoryPage.CATEGORY_HEADER, isPresent()),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
             );
 
@@ -136,6 +139,7 @@ public class ApplyFilters implements Task {
                         WaitUntil.the(CATEGORY_HEADER, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                         RefreshPage.refresh(),
+                        WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
                 );
 
@@ -172,11 +176,14 @@ public class ApplyFilters implements Task {
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                     WaitUntil.the(CategoryPage.CATEGORY_HEADER, isPresent()),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
+                    Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                     WaitUntil.the(PAGINATION_ARROW, isClickable()),
                     Click.on(PAGINATION_ARROW),
                     WaitUntil.the(CATEGORY_HEADER, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                     RefreshPage.refresh(),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(APPLIED_FILTER_BOX).isDisplayed(),
                     Open.productPageByPositionRandomly(),
                     MoveMouseDown.move(),
@@ -216,6 +223,7 @@ public class ApplyFilters implements Task {
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                     Click.on(ALL_FILTERS_BUTTON_AFTER_APPLYING_FILTER),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
             );
             if (PAGINATION_ARROW.resolveFor(actor).isPresent()){
@@ -226,9 +234,11 @@ public class ApplyFilters implements Task {
                         WaitUntil.the(PAGINATION_ARROW, isClickable()),
                         WaitUntil.the(ALL_FILTERS_BUTTON_AFTER_APPLYING_FILTER, isClickable()),
                         Click.on(ALL_FILTERS_BUTTON_AFTER_APPLYING_FILTER),
+                        WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                         RefreshPage.refresh(),
                         Click.on(ALL_FILTERS_BUTTON_AFTER_APPLYING_FILTER),
+                        WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
                 );
                 theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), Matchers.containsString("p=2")));
@@ -276,6 +286,7 @@ public class ApplyFilters implements Task {
                     RefreshPage.refresh(),
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
             );
             if (PAGINATION_ARROW.resolveFor(actor).isPresent()){
@@ -285,6 +296,7 @@ public class ApplyFilters implements Task {
                         WaitUntil.the(CATEGORY_HEADER, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                         RefreshPage.refresh(),
+                        WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
                 );
                 theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), Matchers.containsString("p=2")));
@@ -325,15 +337,16 @@ public class ApplyFilters implements Task {
                     RefreshPage.refresh(),
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
             );
             if (PAGINATION_ARROW.resolveFor(actor).isPresent()){
                 actor.attemptsTo(
-                        Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                         WaitUntil.the(CategoryPage.CATEGORY_HEADER, isPresent()),
                         WaitUntil.the(PAGINATION_ARROW, isClickable()),
                         Click.on(PAGINATION_ARROW),
                         WaitUntil.the(CATEGORY_HEADER, isPresent()),
+                        WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                         RefreshPage.refresh(),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
@@ -371,6 +384,7 @@ public class ApplyFilters implements Task {
                     RefreshPage.refresh(),
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                     WaitUntil.the(CategoryPage.CATEGORY_HEADER, isPresent()),
                     WaitUntil.the(PAGINATION_ARROW, isClickable()),
@@ -378,6 +392,7 @@ public class ApplyFilters implements Task {
                     WaitUntil.the(CATEGORY_HEADER, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                     RefreshPage.refresh(),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(APPLIED_FILTER_BOX).isDisplayed(),
                     Open.productPageByPositionRandomly(),
                     MoveMouseDown.move(),
@@ -406,6 +421,7 @@ public class ApplyFilters implements Task {
                     RefreshPage.refresh(),
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                     WaitUntil.the(CategoryPage.CATEGORY_HEADER, isPresent()),
                     WaitUntil.the(PAGINATION_ARROW, isClickable()),
@@ -413,6 +429,7 @@ public class ApplyFilters implements Task {
                     WaitUntil.the(CATEGORY_HEADER, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                     RefreshPage.refresh(),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(APPLIED_FILTER_BOX).isDisplayed(),
                     Open.productPageByPositionRandomly(),
                     MoveMouseDown.move(),
@@ -442,6 +459,7 @@ public class ApplyFilters implements Task {
                     RefreshPage.refresh(),
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                     WaitUntil.the(CategoryPage.CATEGORY_HEADER, isPresent()),
                     WaitUntil.the(PAGINATION_ARROW, isClickable()),
@@ -449,6 +467,7 @@ public class ApplyFilters implements Task {
                     WaitUntil.the(CATEGORY_HEADER, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                     RefreshPage.refresh(),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(APPLIED_FILTER_BOX).isDisplayed(),
                     Open.productPageByPositionRandomly(),
                     MoveMouseDown.move(),
@@ -484,6 +503,7 @@ public class ApplyFilters implements Task {
                     RefreshPage.refresh(),
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
             );
             if (PAGINATION_ARROW.resolveFor(actor).isPresent()){
@@ -493,8 +513,10 @@ public class ApplyFilters implements Task {
                         WaitUntil.the(PAGINATION_ARROW, isClickable()),
                         Click.on(PAGINATION_ARROW),
                         WaitUntil.the(CATEGORY_HEADER, isPresent()),
+                        WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                         RefreshPage.refresh(),
+                        WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
                 );
                 theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), Matchers.containsString("p=2")));
@@ -533,6 +555,7 @@ public class ApplyFilters implements Task {
                     RefreshPage.refresh(),
                     WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                     Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
+                    WaitUntil.the(APPLIED_FILTER_BOX, isPresent()),
                     WaitUntil.the(CATEGORY_HEADER, isPresent()),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
             );

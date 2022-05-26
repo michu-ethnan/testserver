@@ -1,6 +1,7 @@
 package com.deosite.tests.features.creating_orders;
 
 import com.deosite.tests.actions.Open;
+import com.deosite.tests.model.order.Basic;
 import com.deosite.tests.pages.*;
 import com.deosite.tests.questions.order.Success;
 import com.deosite.tests.steps.SetupSteps;
@@ -23,7 +24,9 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.EMAIL_INPUT;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -42,11 +45,9 @@ public class AddProductToCartAndOrder {
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
-                //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON)
-                //WaitUntil.the(MainMenu.SEARCH_BAR, isPresent())
+                MoveMouse.to(MINI_CART_BUTTON)
         );
     }
     @Given("that {word} adds product to cart on account2")
@@ -54,12 +55,11 @@ public class AddProductToCartAndOrder {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(9),
-                //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON)
-                //WaitUntil.the(MainMenu.SEARCH_BAR, isPresent())
+                MoveMouse.to(MINI_CART_BUTTON)
+
         );
     }
     @Given("that {word} adds product to cart on account3")
@@ -67,12 +67,11 @@ public class AddProductToCartAndOrder {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(10),
-                //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON)
-                //WaitUntil.the(MainMenu.SEARCH_BAR, isPresent())
+                MoveMouse.to(MINI_CART_BUTTON)
+
         );
     }
 
@@ -82,7 +81,6 @@ public class AddProductToCartAndOrder {
         theActorInTheSpotlight().attemptsTo(
                 Open.miniCart(),
                 Open.checkoutPage(),
-                WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds(),
                 ChooseDelivery.byType(deliveryType),
                 FillInBillingData.type(userType)
         );

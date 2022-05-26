@@ -12,11 +12,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.*;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.MINICART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.DELETE_PRODUCT_BUTTON;
 import static com.deosite.tests.pages.MiniCart.EMPTY_CART_MESSAGE;
@@ -24,8 +26,7 @@ import static com.deosite.tests.pages.SearchPage.PRODUCTS_TITLE;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 import static org.hamcrest.Matchers.equalTo;
 
 public class DeleteFromCart {
@@ -39,20 +40,20 @@ public class DeleteFromCart {
                 Setup.site(),
                 Search.forProductByTranslatedKeyword(product),
                 MoveMouseToTop.move(),
-                WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds(),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart());
     }
 
     @When("she deletes it")
     public void actor_deletes_it() {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(ALERT_BOX, isNotVisible()),
+                WaitUntil.the(DELETE_PRODUCT_BUTTON, isClickable()),
                 Click.on(DELETE_PRODUCT_BUTTON),
-                WaitUntil.the(EMPTY_CART_MESSAGE, isPresent())
+                WaitUntil.the(EMPTY_CART_MESSAGE, isPresent()),
+                Ensure.that(EMPTY_CART_MESSAGE).isDisplayed()
         );
     }
 

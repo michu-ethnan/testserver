@@ -16,7 +16,6 @@ public class OpenMiniCart implements Interaction {
     @Step("{0} opens mini cart")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(MINI_CART_BUTTON, isClickable()).forNoMoreThan(100).seconds(),
                 Click.on(MINI_CART_BUTTON)
         );
     }

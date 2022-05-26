@@ -18,6 +18,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SendKeys;
 import net.serenitybdd.screenplay.ensure.Ensure;
@@ -28,6 +29,7 @@ import java.math.BigDecimal;
 
 import static com.deosite.tests.pages.CheckoutPage.*;
 import static com.deosite.tests.pages.HomePage.DAJAR_LOGO;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_BUTTON;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_INPUT;
@@ -67,12 +69,10 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 Open.checkoutPage(),
-                WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds(),
                 FillInBillingData.type(userType),
                 Click.on(SUBMIT_BUTTON),
                 WaitUntil.the(CheckoutPage.DELIVERY_TYPE_COURIER, isNotPresent())
@@ -129,9 +129,8 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON)
+                MoveMouse.to(MINI_CART_BUTTON)
 
 
         );

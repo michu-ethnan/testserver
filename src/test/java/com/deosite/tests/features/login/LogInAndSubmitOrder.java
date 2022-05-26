@@ -24,8 +24,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
-import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
-import static com.deosite.tests.pages.LoginPage.MY_ACCOUNT_BUTTON;
+import static com.deosite.tests.pages.LoginPage.*;
 import static com.deosite.tests.pages.MainMenu.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -44,9 +43,8 @@ public class LogInAndSubmitOrder {
                 Setup.site(),
                 ClickCategory.byCategoryNumber(4),
                 Open.productPageByPositionRandomly(),
-                //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
                 AddProduct.toCart(),
-                Scroll.to(ProductPage.OTHER_PRODUCTS_HEADING),
+                MoveMouseDown.move(),
                 ReturnToPreviousPage.goToPreviousPage()
         );
     }
@@ -57,21 +55,19 @@ public class LogInAndSubmitOrder {
                 WaitUntil.the(LOGIN_BUTTON, isClickable()).forNoMoreThan(100).seconds(),
                 Open.loginPage(),
                 FillInLoginForm.type("login and submit order"),
-                SubmitLoginForm.submitLoginForm()
+                SubmitLoginForm.submitLoginForm(),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()).forNoMoreThan(50).seconds()
         );
     }
 
     @And("he orders a {string} using {word} delivery and {word}")
     public void actor_makes_an_order(String product, String deliveryType, String paymentType) {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(SEARCH_BAR, isPresent()),
                 ClickCategory.byCategoryNumber(6),
-                WaitUntil.the(HomePage.DAJAR_LOGO, isPresent()),
-                Open.productPageByPosition(7),
-                //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isNotPresent()),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 WaitUntil.the(MiniCart.GO_TO_CHECKOUT_BUTTON, isClickable()).forNoMoreThan(100).seconds(),
                 Click.on(MiniCart.GO_TO_CHECKOUT_BUTTON),
