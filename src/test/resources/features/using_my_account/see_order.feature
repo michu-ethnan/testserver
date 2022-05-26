@@ -2,7 +2,7 @@ Feature: See an order in My Account
 
   A customer should be able to see an order in My Account
 
-  Scenario: Should be able to
+  Scenario: See orders
 
     Given that Orlando is in My Account
     When he goes to My Orders tab

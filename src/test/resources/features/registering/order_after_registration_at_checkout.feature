@@ -2,7 +2,7 @@ Feature: Order after registration at checkout
 
   A customer should be able to submit an order after registering at the checkout.
 
-  Scenario: Should be able to
+  Scenario: Order after registering at checkout
 
     Given that Cherry is a user who filled in checkout form "withoutEmailAddress"
     And who paid using transfer

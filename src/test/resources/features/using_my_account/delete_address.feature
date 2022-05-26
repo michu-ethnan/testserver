@@ -2,7 +2,7 @@ Feature: Deleting an address
 
   Customer should be able to delete an address.
 
-  Scenario: Should be able to
+  Scenario: Delete address
 
     Given that Dennis is in the address book
     When he clicks on a trash icon

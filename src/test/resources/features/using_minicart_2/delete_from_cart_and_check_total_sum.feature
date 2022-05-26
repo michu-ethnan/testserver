@@ -4,20 +4,20 @@ Feature: Delete one product from cart and check total sum
   the total sum is
   correct.
 
-  Scenario: Should be able to
+  Scenario: Delete product from mini cart and calculate total sum
 
     Given that Deborah has three products in cart
     When she deletes one of the products in minicart
     Then she should see correct total sum
 
-    Scenario: Should be able to
+    Scenario: Delete product checkout page and calculate total sum
 
       Given that Deborah has three products in cart
       And she has three products at checkout
       When she deletes one of the products at checkout
       Then she should see correct total sum at checkout
       
-      Scenario: Should be able to
+      Scenario: Delete product from payment page and calculate total sum
         
         Given that Deborah has three products in cart
         And she has three products at checkout

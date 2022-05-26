@@ -2,7 +2,7 @@ Feature: Register a new address
 
   A customer should be able to register a new address.
 
-  Scenario: Should be able to
+  Scenario: Register a new account
 
     Given that Reginald is on the register page
     When he submits the registration form

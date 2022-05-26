@@ -2,7 +2,7 @@ Feature: Register at checkout
 
   A customer should be able to register at checkout.
 
-  Scenario: Should be able to
+  Scenario: Register at checkout
 
     Given that Regina is at checkout
     And she attempts to fill in the checkout form "withoutEmailAddress"

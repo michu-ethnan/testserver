@@ -2,7 +2,7 @@ Feature: Edit address
 
   A customer should be able to edit addresses in the address book.
 
-  Scenario: Should be able to
+  Scenario: Edit address
 
     Given that Edith happens to be in the address book
     When she clicks on some address in the address book

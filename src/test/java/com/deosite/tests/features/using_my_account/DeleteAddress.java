@@ -12,6 +12,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
@@ -20,6 +21,8 @@ import static com.deosite.tests.pages.AccountPage.MY_ACCOUNT_HEADER;
 import static com.deosite.tests.pages.AccountPage.ADDRESS_BOOK_BUTTON;
 import static com.deosite.tests.pages.AccountPage.FIRST_TRASH_ICON;
 import static com.deosite.tests.pages.AccountPage.DIALOG_BOX_YES_BUTTON;
+import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -62,7 +65,8 @@ public class DeleteAddress {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(DIALOG_BOX_YES_BUTTON, isClickable()),
                 Click.on(DIALOG_BOX_YES_BUTTON),
-                WaitUntil.the(Alert.ALERT_BOX, isPresent())
+                WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds(),
+                Ensure.that(ALERT_BOX).isDisplayed()
         );
     }
 
@@ -70,5 +74,8 @@ public class DeleteAddress {
     public void actor_should_see_a_popup_with_address_deleted_inscription(String message) {
         theActorInTheSpotlight().should(seeThat(com.deosite.tests.questions.alert.Alert.value(), equalTo(
                 as(theActorInTheSpotlight()).translate(message))));
+        theActorInTheSpotlight().attemptsTo(
+                Click.on(CLOSE_ALERT_BOX_BUTTON)
+        );
     }
 }
