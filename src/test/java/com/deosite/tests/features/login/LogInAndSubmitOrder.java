@@ -24,6 +24,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
+import static com.deosite.tests.pages.CategoryPage.CATEGORY_HEADER;
 import static com.deosite.tests.pages.LoginPage.*;
 import static com.deosite.tests.pages.MainMenu.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -63,10 +64,10 @@ public class LogInAndSubmitOrder {
     @And("he orders a {string} using {word} delivery and {word}")
     public void actor_makes_an_order(String product, String deliveryType, String paymentType) {
         theActorInTheSpotlight().attemptsTo(
-                ClickCategory.byCategoryNumber(6),
-                Open.productPageByPositionRandomly(),
-                AddProduct.toCart(),
-                MoveMouseDown.move(),
+                WaitUntil.the(SEARCH_BAR, isPresent()),
+                MoveMouse.to(FIRST_MAIN_CATEGORY),
+                ClickCategory.byCategoryNumber(5),
+                WaitUntil.the(CATEGORY_HEADER, isPresent()),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 WaitUntil.the(MiniCart.GO_TO_CHECKOUT_BUTTON, isClickable()).forNoMoreThan(100).seconds(),

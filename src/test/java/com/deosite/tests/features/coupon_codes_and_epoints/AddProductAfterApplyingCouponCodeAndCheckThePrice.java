@@ -1,10 +1,7 @@
 package com.deosite.tests.features.coupon_codes_and_epoints;
 
 import com.deosite.tests.actions.Open;
-import com.deosite.tests.pages.CheckoutPage;
-import com.deosite.tests.pages.HomePage;
-import com.deosite.tests.pages.MainMenu;
-import com.deosite.tests.pages.MiniCart;
+import com.deosite.tests.pages.*;
 import com.deosite.tests.questions.checkout.DiscountPrice;
 import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
@@ -128,6 +125,7 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ReturnToPreviousPage.goToPreviousPage(),
                 WaitUntil.the(ADD_TO_CART_BUTTON, isPresent()),
                 MoveMouseDown.move(),
+                MoveMouse.to(MainMenu.FIRST_MAIN_CATEGORY),
                 ReturnToPreviousPage.goToPreviousPage(),
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
@@ -146,6 +144,7 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ReturnToPreviousPage.goToPreviousPage(),
                 WaitUntil.the(ADD_TO_CART_BUTTON, isPresent()),
                 MoveMouseDown.move(),
+                MoveMouse.to(MainMenu.FIRST_MAIN_CATEGORY),
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),

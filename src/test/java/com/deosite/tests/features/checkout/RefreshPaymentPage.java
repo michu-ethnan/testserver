@@ -19,7 +19,9 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.EMAIL_INPUT;
+import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.PaymentPage.TRANSFER_PAYMENT_CHECKBOX;
 import static com.deosite.tests.pages.PaymentPage.PICKUP_PAYMENT_CHECKBOX;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -39,8 +41,9 @@ public class RefreshPaymentPage {
                 ClickCategory.byCategoryNumber(2),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
+                MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 Open.checkoutPage(),
                 WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds(),

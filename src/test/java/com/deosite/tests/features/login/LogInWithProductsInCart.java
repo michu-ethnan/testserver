@@ -21,10 +21,10 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
+import static com.deosite.tests.pages.CategoryPage.CATEGORY_HEADER;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
-import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
-import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
+import static com.deosite.tests.pages.MainMenu.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
@@ -42,7 +42,7 @@ public class LogInWithProductsInCart {
     public void that_actor_added_a_product_to_the_cart(String actor) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(6),
+                ClickCategory.byCategoryNumber(7),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart()
 
@@ -67,6 +67,10 @@ public class LogInWithProductsInCart {
     @And("opens the minicart")
     public void actor_opens_the_minicart() {
         theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(SEARCH_BAR, isPresent()),
+                MoveMouse.to(FIRST_MAIN_CATEGORY),
+                ClickCategory.byCategoryNumber(5),
+                WaitUntil.the(CATEGORY_HEADER, isPresent()),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 WaitUntil.the(MiniCart.GO_TO_CHECKOUT_BUTTON, isPresent()).forNoMoreThan(100).seconds()
