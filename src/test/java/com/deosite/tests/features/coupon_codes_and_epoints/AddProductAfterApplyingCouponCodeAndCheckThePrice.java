@@ -27,12 +27,14 @@ import net.thucydides.core.annotations.Steps;
 
 import java.math.BigDecimal;
 
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.*;
 import static com.deosite.tests.pages.HomePage.DAJAR_LOGO;
 import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_BUTTON;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_INPUT;
+import static com.deosite.tests.pages.ProductPage.ADD_TO_CART_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
@@ -52,6 +54,7 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
@@ -67,6 +70,7 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
@@ -118,15 +122,34 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
         firstDiscountPrice = DiscountPrice.discount().answeredBy(theActorInTheSpotlight());
 
     }
-    @And("he returns to the previous page and adds another product to cart")
+    @And("he returns from checkout page and adds another product to cart")
+    public void actor_returns_from_checkout_and_adds_another_product(){
+        theActorInTheSpotlight().attemptsTo(
+                ReturnToPreviousPage.goToPreviousPage(),
+                WaitUntil.the(ADD_TO_CART_BUTTON, isPresent()),
+                MoveMouseDown.move(),
+                ReturnToPreviousPage.goToPreviousPage(),
+                ClickCategory.byCategoryNumber(5),
+                Open.productPageByPositionRandomly(),
+                AddProduct.toCart(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
+                MoveMouseDown.move(),
+                MoveMouse.to(MINI_CART_BUTTON)
+
+
+        );
+    }
+    @And("he returns from payment page and adds another product to cart")
     public void actor_returns_to_homepage_and_adds_another_product(){
         theActorInTheSpotlight().attemptsTo(
                 ReturnToPreviousPage.goToPreviousPage(),
                 ReturnToPreviousPage.goToPreviousPage(),
-                Scroll.to(SEARCH_BAR),
+                WaitUntil.the(ADD_TO_CART_BUTTON, isPresent()),
+                MoveMouseDown.move(),
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON)
 

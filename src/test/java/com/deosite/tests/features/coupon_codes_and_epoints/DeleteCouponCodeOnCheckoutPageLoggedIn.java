@@ -20,6 +20,7 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.*;
 import static com.deosite.tests.pages.LoginPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
@@ -50,9 +51,10 @@ public class DeleteCouponCodeOnCheckoutPageLoggedIn {
     @When("she adds a coupon code")
     public void actor_adds_a_coupon_code() {
         theActorInTheSpotlight().attemptsTo(
-                ClickCategory.byCategoryNumber(3),
+                ClickCategory.byCategoryNumber(4),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),

@@ -27,6 +27,7 @@ import net.thucydides.core.annotations.Steps;
 import java.math.BigDecimal;
 
 
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.*;
 import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.GO_TO_CHECKOUT_BUTTON;
@@ -49,7 +50,7 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
                 ClickCategory.byCategoryNumber(6),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 Scroll.to(MiniCart.MINICART_BUTTON),
                 Open.miniCart(),
@@ -69,6 +70,7 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
                 ClickCategory.byCategoryNumber(6),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 Scroll.to(MiniCart.MINICART_BUTTON),
                 Open.miniCart(),
@@ -94,6 +96,7 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
                 ClickCategory.byCategoryNumber(6),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 Scroll.to(MiniCart.MINICART_BUTTON),
                 Open.miniCart(),
@@ -118,6 +121,7 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
                 ClickCategory.byCategoryNumber(6),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),

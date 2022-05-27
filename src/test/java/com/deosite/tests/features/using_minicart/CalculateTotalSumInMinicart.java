@@ -21,6 +21,7 @@ import net.thucydides.core.annotations.Steps;
 import java.math.BigDecimal;
 
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -51,7 +52,7 @@ public class CalculateTotalSumInMinicart {
     public void actor_calculates_the_total_sum_in_minicart() {
         theActorInTheSpotlight().attemptsTo(
                 AddProduct.toCart(),
-                WaitUntil.the(ALERT_BOX, isNotVisible()),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),

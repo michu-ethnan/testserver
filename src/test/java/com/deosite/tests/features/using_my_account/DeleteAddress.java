@@ -12,6 +12,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
@@ -66,7 +67,7 @@ public class DeleteAddress {
                 WaitUntil.the(DIALOG_BOX_YES_BUTTON, isClickable()),
                 Click.on(DIALOG_BOX_YES_BUTTON),
                 WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds(),
-                Ensure.that(ALERT_BOX).isDisplayed()
+                MoveMouse.to(CLOSE_ALERT_BOX_BUTTON)
         );
     }
 

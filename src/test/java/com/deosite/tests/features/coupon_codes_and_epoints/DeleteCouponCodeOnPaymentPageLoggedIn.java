@@ -20,6 +20,7 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.APPLY_COUPON_CODE_BUTTON;
 import static com.deosite.tests.pages.LoginPage.EMAIL_INPUT;
@@ -52,9 +53,10 @@ public class DeleteCouponCodeOnPaymentPageLoggedIn {
     @When("he adds a coupon code on the payment page as {word}")
     public void actor_adds_a_coupon_on_the_payment_page(String userType) {
         theActorInTheSpotlight().attemptsTo(
-                ClickCategory.byCategoryNumber(4),
+                ClickCategory.byCategoryNumber(7),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
