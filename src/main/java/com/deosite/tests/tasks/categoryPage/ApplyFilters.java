@@ -50,8 +50,8 @@ public class ApplyFilters implements Task {
                     ClickFilterButton.number(0)
             );
             filter = FilterName.filterName().answeredBy(theActorInTheSpotlight());
-            selectedFilter = filter.replace("(","").replaceAll("[0-9]", "").replace(")","").replaceAll("\\s+", "");
-            url_filter = StringUtils.stripAccents(selectedFilter);
+            selectedFilter = filter.replace("(","").replaceAll("[0-9]", "").replace(")","");
+            url_filter = StringUtils.stripAccents(selectedFilter.replaceAll("\\s+", ""));
             numberOfProductsInFilter = filter.replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "");
 
             System.out.println("The selected filter name: " + selectedFilter);
@@ -113,7 +113,7 @@ public class ApplyFilters implements Task {
                 url_filter = filter.substring(0,5).replace("(","").replace(")","").replaceAll("\\s+", "").replaceAll("[0-9]", "");
             }
             selectedFilter = filter.replace("(","").replaceAll("[0-9]", "").replace(")","");
-            url_filter = StringUtils.stripAccents(url_filter);
+            url_filter = StringUtils.stripAccents(url_filter.replaceAll("\\s+", ""));
             numberOfProductsInFilter = filter.replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "");
 
             System.out.println("The selected filter name: " + selectedFilter);
@@ -207,8 +207,8 @@ public class ApplyFilters implements Task {
                     ClickFilterButton.number(4)
             );
             filter = FilterName.filterName().answeredBy(theActorInTheSpotlight());
-            selectedFilter = filter.replace("(","").replaceAll("[0-9]", "").replace(")","").replaceAll("\\s+", "");
-            url_filter = StringUtils.stripAccents(selectedFilter);
+            selectedFilter = filter.replace("(","").replaceAll("[0-9]", "").replace(")","");
+            url_filter = StringUtils.stripAccents(selectedFilter.replaceAll("\\s+", ""));
             numberOfProductsInFilter = filter.replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "");
 
             System.out.println("The selected filter name: " + selectedFilter);
@@ -261,7 +261,7 @@ public class ApplyFilters implements Task {
 
 
         if (filterName.contains("Material")){
-            int maxLength = 9;
+            int maxLength = 8;
 
             actor.attemptsTo(
                     Click.on(ALL_FILTERS_BUTTON),
@@ -270,10 +270,10 @@ public class ApplyFilters implements Task {
             filter = FilterName.filterName().answeredBy(theActorInTheSpotlight());
 
             if(filter.length()>maxLength){
-                url_filter = filter.substring(0,9).replace("(","").replace(")","").replaceAll("\\s+", "").replaceAll("[0-9]", "");
+                url_filter = filter.substring(0,8).replace("(","").replace(")","").replaceAll("\\s+", "").replaceAll("[0-9]", "");
             }
-            selectedFilter = filter.replace("(","").replaceAll("[0-9]", "").replace(")","").replaceAll("\\s+", "");
-            url_filter = StringUtils.stripAccents(url_filter);
+            selectedFilter = filter.replace("(","").replaceAll("[0-9]", "").replace(")","");
+            url_filter = StringUtils.stripAccents(url_filter.replaceAll("\\s+", ""));
             numberOfProductsInFilter = filter.replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "");
 
             System.out.println("The selected filter name: " + selectedFilter);
@@ -324,7 +324,7 @@ public class ApplyFilters implements Task {
             );
             filter = FilterName.filterName().answeredBy(theActorInTheSpotlight());
             selectedFilter = filter.replace("(","").replaceAll("[0-9]", "").replace(")","").replaceAll("\\s+", "");
-            url_filter = StringUtils.stripAccents(selectedFilter);
+            url_filter = StringUtils.stripAccents(selectedFilter.replaceAll("\\s+", ""));
             numberOfProductsInFilter = filter.replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "");
 
             System.out.println("The selected filter name: " + selectedFilter);
@@ -488,9 +488,22 @@ public class ApplyFilters implements Task {
                     ClickFilterButton.number(12)
             );
             filter = FilterName.filterName().answeredBy(theActorInTheSpotlight());
-            selectedFilter = filter.replace("(","").replaceAll("[0-9]", "").replace(")","").replaceAll("\\s+", "");
-            url_filter = StringUtils.stripAccents(selectedFilter);
-            numberOfProductsInFilter = filter.replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "").substring(1);
+            String kit = filter.substring(0,2);
+
+            if (kit.contains(" ")){
+                selectedFilter = filter.replace("(","").replace(")","").replaceAll("\\s+", "").substring(0,1);
+                url_filter = StringUtils.stripAccents(selectedFilter);
+                numberOfProductsInFilter = filter.replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "").substring(1);
+
+            }
+            else {
+
+                    selectedFilter = filter.replace("(","").replace(")","").replaceAll("\\s+", "").substring(0,2);
+                    url_filter = StringUtils.stripAccents(selectedFilter.replaceAll("\\s+", ""));
+                    numberOfProductsInFilter = filter.replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "").substring(2);
+
+            }
+
 
             System.out.println("The selected filter name: " + selectedFilter);
             System.out.println("Filter name in url: " + url_filter.toLowerCase(Locale.ROOT));
