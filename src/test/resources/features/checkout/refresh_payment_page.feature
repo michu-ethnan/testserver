@@ -3,7 +3,7 @@ Feature: Refresh payment page
   After a customer selects pickup point delivery type, proceeds to the payment page and refreshes it, then cash on
   delivery payment should not be visible.
 
-  Scenario: Should be able to
+  Scenario: Refresh payment page
 
     Given that Rebecca selects pickup delivery as person
     And she proceeds to the payment page to pay using transfer

@@ -13,6 +13,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
@@ -59,7 +60,8 @@ public class AddAddress {
                 FillInAddressForm.type(userType),
                 WaitUntil.the(SUBMIT_NEW_ADDRESS_BUTTON, isPresent()),
                 Click.on(SUBMIT_NEW_ADDRESS_BUTTON),
-                WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds()
+                WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds(),
+                Scroll.to(ALERT_BOX)
         );
     }
 

@@ -2,7 +2,7 @@ Feature: Log in
 
   A customer should be able to log in.
 
-  Scenario: Should be able to
+  Scenario: Logging in
     Given that Anne is on the login page
     When she fills in login form
     And she submits it

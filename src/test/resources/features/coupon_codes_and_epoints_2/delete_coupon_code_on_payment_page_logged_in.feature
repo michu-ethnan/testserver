@@ -2,7 +2,7 @@ Feature: Delete a coupon code on the payment page logged in
 
   A logged in customer should be able to delete a coupon code on the payment page.
 
-  Scenario: Should be able to
+  Scenario: Delete coupon code on the payment page logged in
 
     Given that Desmond is a logged in person
     When he adds a coupon code on the payment page as person

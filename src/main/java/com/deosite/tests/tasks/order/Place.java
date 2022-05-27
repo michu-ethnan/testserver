@@ -1,5 +1,6 @@
 package com.deosite.tests.tasks.order;
 
+import com.deosite.tests.pages.SuccessPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -9,6 +10,7 @@ import net.thucydides.core.annotations.Step;
 import static com.deosite.tests.pages.PaymentPage.AGREEMENT_CHECKBOX;
 import static com.deosite.tests.pages.PaymentPage.PLACE_ORDER_BUTTON;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class Place implements Task {
@@ -19,7 +21,9 @@ public class Place implements Task {
         actor.attemptsTo(
                 WaitUntil.the(AGREEMENT_CHECKBOX, isPresent()).forNoMoreThan(100).seconds(),
                 Click.on(AGREEMENT_CHECKBOX),
-                Click.on(PLACE_ORDER_BUTTON)
+                WaitUntil.the(PLACE_ORDER_BUTTON, isClickable()),
+                Click.on(PLACE_ORDER_BUTTON),
+                WaitUntil.the(SuccessPage.SUCCESS_ORDER_MESSAGE, isPresent()).forNoMoreThan(50).seconds()
         );
     }
 

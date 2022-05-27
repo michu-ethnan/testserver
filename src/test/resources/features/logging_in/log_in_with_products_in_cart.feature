@@ -2,7 +2,7 @@ Feature: Log in with products in cart
 
   A customer should be able to log in with products in cart.
 
-  Scenario: Should be able to
+  Scenario: Log in with products in cart and check the product after login
 
     Given that Peggy added a product to the cart
     When she attempts to log in

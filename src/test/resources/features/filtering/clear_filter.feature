@@ -2,7 +2,7 @@ Feature: Clear filter
 
   A customer should be able to clear filters after applying them.
 
-  Scenario: Should be able to
+  Scenario: Clear filter
 
     Given that Clay happens to be on a category page
     When he applies a filter
