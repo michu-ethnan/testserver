@@ -67,7 +67,7 @@ public class LogInWithProductsInCart {
     @And("opens the minicart")
     public void actor_opens_the_minicart() {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(SEARCH_BAR, isPresent()),
+                Scroll.to(HomePage.SECOND_BANNER),
                 MoveMouse.to(FIRST_MAIN_CATEGORY),
                 ClickCategory.byCategoryNumber(5),
                 WaitUntil.the(CATEGORY_HEADER, isPresent()),

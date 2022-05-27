@@ -7,6 +7,7 @@ import com.deosite.tests.pages.MiniCart;
 import com.deosite.tests.questions.checkout.DiscountPrice;
 import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
+import com.deosite.tests.tasks.basic.RefreshPage;
 import com.deosite.tests.tasks.mainMenu.ClickCategory;
 import com.deosite.tests.tasks.minicart.IncreaseNumberOfProducts;
 import com.deosite.tests.tasks.order.FillInBillingData;
@@ -29,7 +30,7 @@ import java.math.BigDecimal;
 
 import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.*;
-import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
+import static com.deosite.tests.pages.MainMenu.*;
 import static com.deosite.tests.pages.MiniCart.GO_TO_CHECKOUT_BUTTON;
 import static com.deosite.tests.pages.MiniCart.QUANTITY_PICKER;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -97,6 +98,9 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
+                RefreshPage.refresh(),
+                WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
+                Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                 MoveMouseDown.move(),
                 Scroll.to(MiniCart.MINICART_BUTTON),
                 Open.miniCart(),
@@ -122,6 +126,9 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
+                RefreshPage.refresh(),
+                WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
+                Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),

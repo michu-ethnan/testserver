@@ -273,13 +273,13 @@
                                <include>**/UsingMyAccountSuite*.java</include>
                                  <include>**/ProductPageSuite*.java</include>
                                  <include>**/CouponCodeSuite_1*.java</include>
-                                  <include>**/CouponCodeSuite_2*.java</include>
+                                <include>**/CouponCodeSuite_2*.java</include>
                                   <include>**/ApplyAllFiltersSuite*.java</include>
                                   <include>**/BrowseAndOrderFromCategoriesSuite*.java</include>
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>60</threadCount>
-                            <forkCount>60</forkCount>
+                            <threadCount>10</threadCount>
+                            <forkCount>10</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>

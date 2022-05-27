@@ -4,6 +4,7 @@ import com.deosite.tests.actions.Open;
 import com.deosite.tests.pages.*;
 import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
+import com.deosite.tests.tasks.basic.RefreshPage;
 import com.deosite.tests.tasks.mainMenu.ClickCategory;
 import com.deosite.tests.tasks.order.FillInBillingData;
 import com.deosite.tests.tasks.product.*;
@@ -21,7 +22,7 @@ import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.*;
-import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
+import static com.deosite.tests.pages.MainMenu.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
@@ -64,6 +65,9 @@ public class DeleteCouponCodeOnCheckoutPage {
     @And("she attempts to return to the previous page")
     public void actor_attempts_to_return_to_the_previous_page() {
         theActorInTheSpotlight().attemptsTo(
+                RefreshPage.refresh(),
+                WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
+                Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                 Click.on(PaymentPage.BACK_TO_CHECKOUT_BUTTON),
                 WaitUntil.the(SUBMIT_BUTTON, isPresent())
         );

@@ -5,6 +5,7 @@ import com.deosite.tests.pages.*;
 import com.deosite.tests.questions.checkout.DiscountPrice;
 import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
+import com.deosite.tests.tasks.basic.RefreshPage;
 import com.deosite.tests.tasks.basic.ReturnToPreviousPage;
 import com.deosite.tests.tasks.mainMenu.ClickCategory;
 import com.deosite.tests.tasks.order.FillInBillingData;
@@ -27,15 +28,14 @@ import java.math.BigDecimal;
 import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.*;
 import static com.deosite.tests.pages.HomePage.DAJAR_LOGO;
-import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
-import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
+import static com.deosite.tests.pages.MainMenu.*;
+import static com.deosite.tests.pages.MainMenu.NEWSLETTER_POPUP_CLOSE_BUTTON;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_BUTTON;
 import static com.deosite.tests.pages.PaymentPage.COUPON_CODE_INPUT;
 import static com.deosite.tests.pages.ProductPage.ADD_TO_CART_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
     @Steps
@@ -48,11 +48,15 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
     public void actor_is_on_the_checkout_page(String actor){
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(7),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
+                RefreshPage.refresh(),
+                WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
+                Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                 MoveMouseDown.move(),
+                WaitUntil.the(MINI_CART_BUTTON, isClickable()),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 Open.checkoutPage()
@@ -64,12 +68,16 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
     public void actor_is_on_the_payment_page(String actor, String userType){
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
+                ClickCategory.byCategoryNumber(7),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
+                RefreshPage.refresh(),
+                WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
+                Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
+                WaitUntil.the(MINI_CART_BUTTON, isClickable()),
                 Open.miniCart(),
                 Open.checkoutPage(),
                 FillInBillingData.type(userType),

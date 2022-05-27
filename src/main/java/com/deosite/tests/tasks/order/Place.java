@@ -22,8 +22,7 @@ public class Place implements Task {
                 WaitUntil.the(AGREEMENT_CHECKBOX, isPresent()).forNoMoreThan(100).seconds(),
                 Click.on(AGREEMENT_CHECKBOX),
                 WaitUntil.the(PLACE_ORDER_BUTTON, isClickable()),
-                Click.on(PLACE_ORDER_BUTTON),
-                WaitUntil.the(SuccessPage.SUCCESS_ORDER_MESSAGE, isPresent()).forNoMoreThan(50).seconds()
+                Click.on(PLACE_ORDER_BUTTON)
         );
     }
 

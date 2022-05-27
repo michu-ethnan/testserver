@@ -113,6 +113,9 @@ public class AddProductToCartAndOrder {
 
     @Then("the order should be placed")
     public void actor_should_see_that_the_order_was_placed() {
+        theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(SuccessPage.SUCCESS_ORDER_MESSAGE, isPresent()).forNoMoreThan(50).seconds()
+        );
         theActorInTheSpotlight().should(
                 seeThat(
                         Success.message(), equalTo(

@@ -42,7 +42,7 @@ public class LogInAndSubmitOrder {
     public void that_actor_has_a_product_in_the_minicart(String actor) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(4),
+                ClickCategory.byCategoryNumber(7),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),
@@ -64,7 +64,7 @@ public class LogInAndSubmitOrder {
     @And("he orders a {string} using {word} delivery and {word}")
     public void actor_makes_an_order(String product, String deliveryType, String paymentType) {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(SEARCH_BAR, isPresent()),
+                Scroll.to(HomePage.SECOND_BANNER),
                 MoveMouse.to(FIRST_MAIN_CATEGORY),
                 ClickCategory.byCategoryNumber(5),
                 WaitUntil.the(CATEGORY_HEADER, isPresent()),

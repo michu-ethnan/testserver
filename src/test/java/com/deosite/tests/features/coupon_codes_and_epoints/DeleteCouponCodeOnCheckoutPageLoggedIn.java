@@ -4,6 +4,7 @@ import com.deosite.tests.actions.Open;
 import com.deosite.tests.pages.*;
 import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
+import com.deosite.tests.tasks.basic.RefreshPage;
 import com.deosite.tests.tasks.login.FillInLoginForm;
 import com.deosite.tests.tasks.login.SubmitLoginForm;
 import com.deosite.tests.tasks.mainMenu.ClickCategory;
@@ -24,8 +25,8 @@ import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.*;
 import static com.deosite.tests.pages.LoginPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
-import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
-import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
+import static com.deosite.tests.pages.MainMenu.*;
+import static com.deosite.tests.pages.MainMenu.NEWSLETTER_POPUP_CLOSE_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
@@ -83,6 +84,9 @@ public class DeleteCouponCodeOnCheckoutPageLoggedIn {
     public void actor_returns_to_the_previous_step() {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(PaymentPage.BACK_TO_CHECKOUT_BUTTON),
+                RefreshPage.refresh(),
+                WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
+                Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                 WaitUntil.the(DELETE_COUPON_CODE_BUTTON, isPresent())
         );
     }
