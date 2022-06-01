@@ -30,7 +30,6 @@ public class CheckoutWithProduct implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Search.forProductByTranslatedKeyword(product),
-                WaitUntil.the(CategoryPage.PAGINATION_ARROW, isPresent()),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
                 MoveMouseDown.move(),

@@ -21,8 +21,6 @@ public class AddProductToCart implements Task {
     public <T extends Actor> void performAs(T actor) {
 
 actor.attemptsTo(
-        WaitUntil.the(ADD_TO_CART_BUTTON, isPresent()).forNoMoreThan(100).seconds(),
-        WaitUntil.the(ADD_TO_CART_BUTTON, isClickable()).forNoMoreThan(100).seconds(),
         Click.on(ADD_TO_CART_BUTTON)
 );
 if (ALERT_BOX.resolveFor(actor).isPresent()){

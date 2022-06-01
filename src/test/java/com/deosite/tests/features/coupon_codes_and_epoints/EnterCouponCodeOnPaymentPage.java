@@ -56,7 +56,7 @@ public class EnterCouponCodeOnPaymentPage {
         theActorInTheSpotlight().attemptsTo(
                 FillInBillingData.type(userType),
                 Click.on(SUBMIT_BUTTON),
-                WaitUntil.the(COUPON_CODE_BUTTON, isPresent())
+                WaitUntil.the(PaymentPage.PLACE_ORDER_BUTTON, isPresent())
         );
     }
 

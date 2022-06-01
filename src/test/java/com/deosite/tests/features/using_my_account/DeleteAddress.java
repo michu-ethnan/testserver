@@ -12,6 +12,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
@@ -44,7 +45,9 @@ public class DeleteAddress {
                 MoveMouseToTop.move(),
                 Open.accountPage(),
                 WaitUntil.the(MY_ACCOUNT_HEADER, isPresent()).forNoMoreThan(100).seconds(),
+                MoveMouse.to(ADDRESS_BOOK_BUTTON),
                 Click.on(ADDRESS_BOOK_BUTTON),
+                MoveMouse.to(ADDRESS_BOOK_BUTTON),
                 WaitUntil.the(FIRST_TRASH_ICON, isPresent()).forNoMoreThan(100).seconds(),
                 WaitUntil.the(FIRST_TRASH_ICON, isClickable()).forNoMoreThan(100).seconds()
         );

@@ -13,6 +13,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
@@ -47,6 +48,7 @@ public class AddAddress {
                 MoveMouseToTop.move(),
                 Open.accountPage(),
                 WaitUntil.the(MY_ACCOUNT_HEADER, isPresent()).forNoMoreThan(50).seconds()
+
         );
     }
 
@@ -55,13 +57,14 @@ public class AddAddress {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(ADDRESS_BOOK_BUTTON),
                 WaitUntil.the(ADD_NEW_ADDRESS_BUTTON, isPresent()),
+                MoveMouse.to(ADD_NEW_ADDRESS_BUTTON),
                 Click.on(ADD_NEW_ADDRESS_BUTTON),
                 WaitUntil.the(AccountPage.MY_ACCOUNT_SUBHEADER, containsText("Nowy adres")),
                 FillInAddressForm.type(userType),
                 WaitUntil.the(SUBMIT_NEW_ADDRESS_BUTTON, isPresent()),
                 Click.on(SUBMIT_NEW_ADDRESS_BUTTON),
                 WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds(),
-                Scroll.to(ALERT_BOX)
+                MoveMouse.to(ALERT_BOX)
         );
     }
 

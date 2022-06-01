@@ -31,8 +31,7 @@ import java.math.BigDecimal;
 import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CheckoutPage.*;
 import static com.deosite.tests.pages.MainMenu.*;
-import static com.deosite.tests.pages.MiniCart.GO_TO_CHECKOUT_BUTTON;
-import static com.deosite.tests.pages.MiniCart.QUANTITY_PICKER;
+import static com.deosite.tests.pages.MiniCart.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
@@ -131,6 +130,7 @@ public class ChangeAmountOfProductAfterApplyingCouponCodeAndCheckPrice {
                 Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
+                WaitUntil.the(MINICART_BUTTON, isClickable()),
                 Open.miniCart(),
                 WaitUntil.the(GO_TO_CHECKOUT_BUTTON, isClickable()),
                 Click.on(QUANTITY_PICKER),

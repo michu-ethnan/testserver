@@ -14,6 +14,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
@@ -44,6 +45,7 @@ public class EditAddress {
                 MoveMouseToTop.move(),
                 Open.accountPage(),
                 WaitUntil.the(MY_ACCOUNT_HEADER, isPresent()).forNoMoreThan(100).seconds(),
+                MoveMouse.to(ADDRESS_BOOK_BUTTON),
                 Click.on(ADDRESS_BOOK_BUTTON)
         );
     }
