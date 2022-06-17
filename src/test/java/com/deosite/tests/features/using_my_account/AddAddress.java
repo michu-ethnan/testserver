@@ -25,6 +25,7 @@ import static com.deosite.tests.pages.AccountPage.SUBMIT_NEW_ADDRESS_BUTTON;
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.abilities.Load.as;
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.containsText;
@@ -63,8 +64,8 @@ public class AddAddress {
                 FillInAddressForm.type(userType),
                 WaitUntil.the(SUBMIT_NEW_ADDRESS_BUTTON, isPresent()),
                 Click.on(SUBMIT_NEW_ADDRESS_BUTTON),
-                WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds(),
-                MoveMouse.to(ALERT_BOX)
+                Scroll.to(SUBMIT_NEW_ADDRESS_BUTTON)
+
         );
     }
 

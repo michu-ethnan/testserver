@@ -39,7 +39,7 @@ public class CalculateTotalSumInMinicart {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPositionRandomly()
+                Open.productPageByPosition(4)
                 );
     }
 
@@ -73,4 +73,3 @@ public class CalculateTotalSumInMinicart {
         );
     }
 }
-

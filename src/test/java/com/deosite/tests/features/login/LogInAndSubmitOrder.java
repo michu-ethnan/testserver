@@ -67,7 +67,6 @@ public class LogInAndSubmitOrder {
                 Scroll.to(HomePage.SECOND_BANNER),
                 MoveMouse.to(FIRST_MAIN_CATEGORY),
                 ClickCategory.byCategoryNumber(5),
-                WaitUntil.the(CATEGORY_HEADER, isPresent()),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
                 WaitUntil.the(MiniCart.GO_TO_CHECKOUT_BUTTON, isClickable()).forNoMoreThan(100).seconds(),
