@@ -24,13 +24,14 @@ import net.thucydides.core.annotations.Steps;
 import java.math.BigDecimal;
 
 import static com.deosite.tests.pages.CategoryPage.CATEGORY_HEADER;
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.MainMenu.FIRST_MAIN_CATEGORY;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
+import static com.deosite.tests.pages.ProductPage.PRODUCT_THUMBNAIL;
 import static com.deosite.tests.pages.SearchPage.PRODUCTS_TITLE;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class SortingByPriceLowestFirst {
     @Steps
@@ -62,8 +63,7 @@ public class SortingByPriceLowestFirst {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(CategoryPage.SORTING_BUTTON),
                 SelectSortingOption.number(2),
-                WaitUntil.the(CategoryPage.FILTERS_LIST, isClickable()),
-                WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds()
+                MoveMouseToTop.move()
 
         );
 
@@ -73,14 +73,14 @@ public class SortingByPriceLowestFirst {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(CategoryPage.SORTING_BUTTON),
                 SelectSortingOption.number(1),
-                WaitUntil.the(CategoryPage.FILTERS_LIST, isClickable()),
-                WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds()
+                MoveMouseToTop.move()
         );
     }
     @And("she sees the value of the first price")
     public void emilia_sees_the_first_price(){
         theActorInTheSpotlight().attemptsTo(
                 Open.productPageByPosition(1),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 WaitUntil.the(ProductPage.PRODUCT_PRICE, isPresent()).forNoMoreThan(50).seconds()
 
         );
@@ -92,7 +92,8 @@ public class SortingByPriceLowestFirst {
         theActorInTheSpotlight().attemptsTo(
                 Scroll.to(SEARCH_BAR),
                 ReturnToPreviousPage.goToPreviousPage(),
-                Open.productPageByPosition(10)
+                Open.productPageByPosition(10),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );
         secondProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());
     }

@@ -9,8 +9,8 @@ public class ProductPage {
     public static Target PRODUCT_NAME = Target.the("Product name").locatedBy("//*[@id=\"__app__\"]//h1");
     public static Target CONFIGURABLE_SELECT_LABEL = Target.the("Configurable select name").locatedBy("//*[@id=\"__app__\"]/div/div[3]/div/div[1]/div/div/div/div[3]/div/div[3]/div[1]/div/div/label/span");
 
-    public static Target PRODUCT_PRICE = Target.the("Product price").locatedBy("//*[@id=\"__app__\"]/div[2]//div[2]/p/span/span[1]");
-    public static Target DISCOUNTED_PRODUCT_PRICE = Target.the("Discounted Product price").locatedBy("//*[@id=\"__app__\"]/div[2]//div[3]/p[2]/span/span[1]");
+    public static Target PRODUCT_PRICE = Target.the("Product price").locatedBy("(//*[@id=\"__app__\"]//h1/../div//p/span/span)[1]");
+    public static Target DISCOUNTED_PRODUCT_PRICE = Target.the("Discounted Product price").locatedBy("(//*[@id=\"__app__\"]//h1/../div//p[2]/span/span)[1]");
 
     public static Target RIGHT_ARROW = Target.the("Right arrow").locatedBy("//button[@data-test='right-arrow-small-image-slider']");
     public static Target LEFT_ARROW = Target.the("Left arrow").locatedBy("//button[@data-test='left-arrow-small-image-slider']");

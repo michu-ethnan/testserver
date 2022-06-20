@@ -52,7 +52,10 @@ public class CalculateTotalSumInMinicart {
     public void actor_calculates_the_total_sum_in_minicart() {
         theActorInTheSpotlight().attemptsTo(
                 AddProduct.toCart(),
-                Click.on(CLOSE_ALERT_BOX_BUTTON),
+                Click.on(CLOSE_ALERT_BOX_BUTTON));
+        productPrice = ProductPrice.price().answeredBy(theActorInTheSpotlight());
+
+        theActorInTheSpotlight().attemptsTo(
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),

@@ -24,13 +24,15 @@ import net.thucydides.core.annotations.Steps;
 import java.math.BigDecimal;
 
 import static com.deosite.tests.pages.CategoryPage.CATEGORY_HEADER;
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.MainMenu.FIRST_MAIN_CATEGORY;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
+import static com.deosite.tests.pages.ProductPage.ADD_TO_CART_BUTTON;
+import static com.deosite.tests.pages.ProductPage.PRODUCT_THUMBNAIL;
 import static com.deosite.tests.pages.SearchPage.PRODUCTS_TITLE;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class SortingByPriceHighestFirst {
     @Steps
@@ -64,8 +66,8 @@ public class SortingByPriceHighestFirst {
     theActorInTheSpotlight().attemptsTo(
             Click.on(CategoryPage.SORTING_BUTTON),
             SelectSortingOption.number(1),
-            WaitUntil.the(CategoryPage.FILTERS_LIST, isClickable()),
-            WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds()
+            MoveMouseToTop.move()
+           // WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds()
 
     );
 
@@ -75,15 +77,13 @@ public class SortingByPriceHighestFirst {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(CategoryPage.SORTING_BUTTON),
                 SelectSortingOption.number(0),
-                WaitUntil.the(CategoryPage.FILTERS_LIST, isClickable()),
-                WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds()
+                MoveMouseToTop.move()
         );
     }
 @And("she sees the first price")
     public void actor_sees_first_price(){
     theActorInTheSpotlight().attemptsTo(
-            Open.productPageByPosition(1),
-            WaitUntil.the(ProductPage.PRODUCT_PRICE, isPresent()).forNoMoreThan(50).seconds()
+            Open.productPageByPosition(2)
 
     );
     firstProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());
