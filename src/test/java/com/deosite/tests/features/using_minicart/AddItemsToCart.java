@@ -14,6 +14,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
+import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
 import static com.deosite.tests.pages.SearchPage.PRODUCTS_TITLE;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -42,7 +43,8 @@ public class AddItemsToCart {
     @When("(s)he tries to add it to cart")
     public void actor_tries_to_add_product_to_cart() {
         theActorInTheSpotlight().attemptsTo(
-                AddProduct.toCart()
+                AddProduct.toCart(),
+                WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(10).seconds()
         );
     }
 

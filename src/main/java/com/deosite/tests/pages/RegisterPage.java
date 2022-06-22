@@ -9,4 +9,5 @@ public class RegisterPage {
     public static Target LAST_NAME_INPUT = Target.the("Last name input").locatedBy("//input[@name='lastName']");
     public static Target AGREEMENT_CHECKBOX = Target.the("Agreement checkbox").locatedBy("(//div[@data-test='registration-agreement'])[1]");
     public static Target REGISTER_SUBMIT_BUTTON = Target.the("Submit button").locatedBy("//button[@type='submit']");
+    public static Target REGISTER_SUCCESS_ALERT = Target.the("Registration success").locatedBy("//*[@id=\"__notifications-bottomLeft__\"]/div/div/div/p");
 }

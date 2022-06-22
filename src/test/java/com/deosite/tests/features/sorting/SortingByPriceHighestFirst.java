@@ -83,7 +83,7 @@ public class SortingByPriceHighestFirst {
 @And("she sees the first price")
     public void actor_sees_first_price(){
     theActorInTheSpotlight().attemptsTo(
-            Open.productPageByPosition(2)
+            Open.productPageByPosition(4)
 
     );
     firstProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());

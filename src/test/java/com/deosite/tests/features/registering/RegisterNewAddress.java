@@ -46,7 +46,7 @@ public class RegisterNewAddress {
                 FillInRegisterForm.type("register"),
                 Click.on(AGREEMENT_CHECKBOX),
                 Click.on(REGISTER_SUBMIT_BUTTON),
-                WaitUntil.the(Alert.ALERT_BOX, isPresent()).forNoMoreThan(50).seconds()
+                WaitUntil.the(REGISTER_SUCCESS_ALERT, isPresent()).forNoMoreThan(50).seconds()
                 );
     }
 

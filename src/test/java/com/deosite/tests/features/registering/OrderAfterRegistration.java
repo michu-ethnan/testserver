@@ -42,7 +42,7 @@ public class OrderAfterRegistration {
                 FillInRegisterForm.type("register"),
                 Click.on(AGREEMENT_CHECKBOX),
                 Click.on(REGISTER_SUBMIT_BUTTON),
-                WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds()
+                WaitUntil.the(REGISTER_SUCCESS_ALERT, isPresent()).forNoMoreThan(100).seconds()
         );
     }
 
