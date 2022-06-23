@@ -72,7 +72,7 @@ public class BrowseAndOrderFromCategories {
                 EnsurePageContent.by(categoryName),
                 WaitUntil.the(CATEGORY_HEADER, isPresent()),
                 Scroll.to(INSPIRATIONS_BANNER_1),
-                OpenInspirations.by(1)
+                OpenInspirations.by(2)
         );
     }
     @Given("that {word} wants to browse and order products from {word} category")
@@ -95,8 +95,6 @@ public class BrowseAndOrderFromCategories {
                 Scroll.to(CATEGORY_HEADER),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(ALERT_BOX, isPresent()),
-                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart()

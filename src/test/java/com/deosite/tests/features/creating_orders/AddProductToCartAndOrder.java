@@ -47,8 +47,6 @@ public class AddProductToCartAndOrder {
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(CLOSE_ALERT_BOX_BUTTON, isPresent()).forNoMoreThan(10).seconds(),
-                Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON)
         );

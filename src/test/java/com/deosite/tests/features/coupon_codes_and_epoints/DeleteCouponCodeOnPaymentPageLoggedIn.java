@@ -56,7 +56,7 @@ public class DeleteCouponCodeOnPaymentPageLoggedIn {
                 ClickCategory.byCategoryNumber(7),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                Click.on(CLOSE_ALERT_BOX_BUTTON),
+                //Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart(),
