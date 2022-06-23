@@ -51,7 +51,7 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ClickCategory.byCategoryNumber(7),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(CLOSE_ALERT_BOX_BUTTON, isPresent()).forNoMoreThan(10).seconds(),
+                WaitUntil.the(CLOSE_ALERT_BOX_BUTTON, isPresent()),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
                 RefreshPage.refresh(),
                 WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
@@ -72,7 +72,6 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ClickCategory.byCategoryNumber(7),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(CLOSE_ALERT_BOX_BUTTON, isPresent()).forNoMoreThan(10).seconds(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
                 RefreshPage.refresh(),
                 WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
@@ -140,7 +139,6 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(CLOSE_ALERT_BOX_BUTTON, isPresent()).forNoMoreThan(10).seconds(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON)
@@ -159,7 +157,6 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ClickCategory.byCategoryNumber(5),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                WaitUntil.the(CLOSE_ALERT_BOX_BUTTON, isPresent()).forNoMoreThan(10).seconds(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON)

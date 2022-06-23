@@ -64,9 +64,7 @@ public class AddAddress {
                 FillInAddressForm.type(userType),
                 WaitUntil.the(SUBMIT_NEW_ADDRESS_BUTTON, isPresent()),
                 Scroll.to(SUBMIT_NEW_ADDRESS_BUTTON),
-                Click.on(SUBMIT_NEW_ADDRESS_BUTTON),
-                WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(50).seconds()
-
+                Click.on(SUBMIT_NEW_ADDRESS_BUTTON)
 
         );
     }
