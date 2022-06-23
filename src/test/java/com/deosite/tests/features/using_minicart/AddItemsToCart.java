@@ -7,6 +7,7 @@ import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
 import com.deosite.tests.tasks.basic.MoveMouseToTop;
 import com.deosite.tests.tasks.product.AddProduct;
+import com.deosite.tests.tasks.product.MoveMouseDown;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -44,6 +45,7 @@ public class AddItemsToCart {
     public void actor_tries_to_add_product_to_cart() {
         theActorInTheSpotlight().attemptsTo(
                 AddProduct.toCart(),
+                MoveMouseDown.move(),
                 WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(10).seconds()
         );
     }
