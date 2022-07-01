@@ -278,8 +278,8 @@
                                   <include>**/BrowseAndOrderFromCategoriesSuite*.java</include>
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>44</threadCount>
-                            <forkCount>44</forkCount>
+                            <threadCount>50</threadCount>
+                            <forkCount>50</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>

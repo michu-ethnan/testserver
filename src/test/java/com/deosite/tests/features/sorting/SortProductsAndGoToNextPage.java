@@ -2,6 +2,7 @@ package com.deosite.tests.features.sorting;
 
 import com.deosite.tests.actions.Search;
 import com.deosite.tests.pages.CategoryPage;
+import com.deosite.tests.pages.SearchPage;
 import com.deosite.tests.questions.category.CurrentUrl;
 import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
@@ -59,7 +60,8 @@ public class SortProductsAndGoToNextPage {
     public void actor_sorts_products() {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(CategoryPage.SORTING_BUTTON),
-                SelectSortingOption.number(2)
+                SelectSortingOption.number(2),
+                WaitUntil.the(SearchPage.PRODUCT_LIST, isClickable()).forNoMoreThan(10).seconds()
         );
     }
 

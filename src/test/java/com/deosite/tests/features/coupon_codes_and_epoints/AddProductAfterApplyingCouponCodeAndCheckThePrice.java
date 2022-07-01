@@ -72,7 +72,7 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 ClickCategory.byCategoryNumber(7),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                Click.on(CLOSE_ALERT_BOX_BUTTON),
+                //Click.on(CLOSE_ALERT_BOX_BUTTON),
                 RefreshPage.refresh(),
                 WaitUntil.the(NEWSLETTER_POPUP, isPresent()).forNoMoreThan(10).seconds(),
                 Click.on(NEWSLETTER_POPUP_CLOSE_BUTTON),
@@ -82,8 +82,7 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
                 Open.miniCart(),
                 Open.checkoutPage(),
                 FillInBillingData.type(userType),
-                Click.on(SUBMIT_BUTTON),
-                WaitUntil.the(CheckoutPage.DELIVERY_TYPE_COURIER, isNotPresent())
+                Click.on(SUBMIT_BUTTON)
 
 
         );
@@ -104,6 +103,7 @@ public class AddProductAfterApplyingCouponCodeAndCheckThePrice {
     @When("he applies a coupon code on payment page")
     public void actor_applies_coupon_code_on_checkout_page(){
         theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotPresent()),
                 WaitUntil.the(COUPON_CODE_BUTTON, isPresent()),
                 Click.on(COUPON_CODE_BUTTON),
                 SendKeys.of("ABC123").into(COUPON_CODE_INPUT),
