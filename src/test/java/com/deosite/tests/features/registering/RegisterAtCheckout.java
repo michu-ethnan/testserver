@@ -1,3 +1,4 @@
+/*
 package com.deosite.tests.features.registering;
 
 import com.deosite.tests.pages.CheckoutPage;
@@ -90,3 +91,4 @@ public class RegisterAtCheckout {
         ));
     }
 }
+*/

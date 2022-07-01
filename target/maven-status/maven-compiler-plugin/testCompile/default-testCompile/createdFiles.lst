@@ -16,7 +16,6 @@ com/deosite/tests/features/registering/RegisterNewAddress.class
 com/deosite/tests/CheckoutSuite.class
 com/deosite/tests/features/using_minicart/CalculateTotalSumInMinicart.class
 com/deosite/tests/FilteringTestSuite.class
-com/deosite/tests/features/registering/RegisterAtCheckout.class
 com/deosite/tests/NavigatingWebsiteSuite.class
 com/deosite/tests/features/coupon_codes_and_epoints/DeleteCouponCodeOnCheckoutPageLoggedIn.class
 com/deosite/tests/features/creating_orders/AddProductToCartAndOrder.class
@@ -25,7 +24,6 @@ com/deosite/tests/features/product_page/ReturnAfterClickingConfigurableProduct.c
 com/deosite/tests/RegisteringSuite.class
 com/deosite/tests/features/filtering/ClearFilter.class
 com/deosite/tests/features/sorting/SortProductsAndGoToNextPage.class
-com/deosite/tests/features/registering/OrderAfterRegistrationAtCheckout.class
 com/deosite/tests/features/using_minicart/ChangeNumberOfProductsInMinicart.class
 com/deosite/tests/SortingSuite.class
 com/deosite/tests/LoggingInSuite.class

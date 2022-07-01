@@ -11,6 +11,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
@@ -46,7 +47,7 @@ public class RegisterNewAddress {
                 FillInRegisterForm.type("register"),
                 Click.on(AGREEMENT_CHECKBOX),
                 Click.on(REGISTER_SUBMIT_BUTTON),
-                WaitUntil.the(REGISTER_SUCCESS_ALERT, isPresent()).forNoMoreThan(50).seconds()
+                Ensure.that(REGISTER_SUCCESS_ALERT).hasTextContent("Utworzono konto i zalogowano")
                 );
     }
 
