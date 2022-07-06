@@ -81,7 +81,8 @@ public class DeleteFromCartAndCheckTotalSum {
     public void actor_has_three_products_on_payment_page(String userType) {
         theActorInTheSpotlight().attemptsTo(
                 FillInBillingData.type(userType),
-                Click.on(SUBMIT_BUTTON)
+                Click.on(SUBMIT_BUTTON),
+                WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotPresent())
         );
     }
 

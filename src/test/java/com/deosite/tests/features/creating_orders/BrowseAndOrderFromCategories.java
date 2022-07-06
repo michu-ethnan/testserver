@@ -26,9 +26,11 @@ import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CategoryPage.*;
 import static com.deosite.tests.pages.CheckoutPage.EMAIL_INPUT;
+import static com.deosite.tests.pages.CheckoutPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.MainMenu.MINI_CART_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class BrowseAndOrderFromCategories {
@@ -84,7 +86,9 @@ public class BrowseAndOrderFromCategories {
                 WaitUntil.the(CATEGORY_HEADER, isPresent()).forNoMoreThan(10).seconds(),
                 EnsurePageContent.by(categoryName),
                 Scroll.to(FIRST_PROMOTION_BANNER),
-                SelectPromotion.by(2)
+                SelectPromotion.by(2),
+                WaitUntil.the(CATEGORY_HEADER, isPresent()),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );
 
     }
