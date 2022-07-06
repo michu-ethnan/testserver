@@ -14,6 +14,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.waits.Wait;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
@@ -60,7 +61,8 @@ public class LogInUsingDifferentEmailAddress {
     @When("he logs in using {string}")
     public void actor_logs_in_using_different_email_address(String userType) {
         theActorInTheSpotlight().attemptsTo(
-                FillInLoginFormWithDifferentEmailAddress.type("differentEmail")
+                FillInLoginFormWithDifferentEmailAddress.type("differentEmail"),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );
 
         secondEmail = EmailName.getEmailName().answeredBy(theActorInTheSpotlight());

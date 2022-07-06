@@ -45,7 +45,8 @@ public class ChangeNumberOfProductsInMinicart {
                 WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds(),
                 Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                Click.on(CLOSE_ALERT_BOX_BUTTON),
+                //Click.on(CLOSE_ALERT_BOX_BUTTON),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 MoveMouseDown.move(),
                 MoveMouse.to(MINI_CART_BUTTON),
                 Open.miniCart()

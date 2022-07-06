@@ -51,8 +51,8 @@ public class CalculateTotalSumInMinicart {
     @When("the total sum in minicart is calculated")
     public void actor_calculates_the_total_sum_in_minicart() {
         theActorInTheSpotlight().attemptsTo(
-                AddProduct.toCart(),
-                Click.on(CLOSE_ALERT_BOX_BUTTON));
+                AddProduct.toCart());
+                //Click.on(CLOSE_ALERT_BOX_BUTTON)
         productPrice = ProductPrice.price().answeredBy(theActorInTheSpotlight());
 
         theActorInTheSpotlight().attemptsTo(
