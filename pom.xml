@@ -276,6 +276,7 @@
                                 <include>**/CouponCodeSuite_2*.java</include>
                                   <include>**/ApplyAllFiltersSuite*.java</include>
                                   <include>**/BrowseAndOrderFromCategoriesSuite*.java</include>
+                                 <include>**/PaginationSuite*.java</include>
                             </includes>
                             <parallel>suites</parallel>
                             <threadCount>50</threadCount>
