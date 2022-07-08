@@ -24,7 +24,7 @@ Feature: Apply filters and select page
     And she ensures that pagination button is present
     And she selects a page number
     Then she should be on the selected page number and the filter is still applied
-    When she returns to the previous page
+    When she returns to previous page
     Then she ensures that pagination button is present
 
 

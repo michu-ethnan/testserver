@@ -86,7 +86,7 @@ public class BrowseAndOrderFromCategories {
                 WaitUntil.the(CATEGORY_HEADER, isPresent()).forNoMoreThan(10).seconds(),
                 EnsurePageContent.by(categoryName),
                 Scroll.to(FIRST_PROMOTION_BANNER),
-                SelectPromotion.by(2),
+                SelectPromotion.by(3),
                 WaitUntil.the(CATEGORY_HEADER, isPresent()),
                 WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );

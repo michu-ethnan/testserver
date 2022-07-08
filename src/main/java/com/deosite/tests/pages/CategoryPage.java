@@ -6,8 +6,7 @@ public class CategoryPage {
 
     public static Target PAGINATION_SELECT = Target.the("Pagination select").locatedBy("(//div[@data-test='quantity-picker-small'])[1]");
     public static Target PAGINATION_NUMBER_LIST = Target.the("Oagination number list").locatedBy("//*[@id=\"__layers__\"]//div[@option]");
-    public static Target PAGINATION_INPUT = Target.the("Pagination input").locatedBy("//*[@id=\"__app__\"]/div[2]/div" +
-            "[3]/div/div[2]/div/div/div[2]/div[1]/div/div[2]/div/div[2]/div/span/div[1]/div/div/input");
+    public static Target PAGINATION_INPUT = Target.the("Pagination input").locatedBy("(//div[@data-test=\"quantity-picker-small\"]/input[@type=\"number\"])[1]");
     public static Target PAGINATION_ARROW = Target.the("Pagination arrow").locatedBy("(//button[@data-test='pagination-next'])[1]");
     public static Target PAGINATION_ARROW_BOTTOM = Target.the("Pagination arrow bottom").locatedBy("(//button[@data-test='pagination-next'])[2]");
     public static Target CATEGORY_HEADER = Target.the("Category header").locatedBy("(//*[@id=\"__app__\"]//h3)[1]");

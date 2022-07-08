@@ -21,6 +21,8 @@ public class Bundle_pl_PL extends ListResourceBundle {
 
                 // Products
                 {"mug", "Kubek"},
+                {"armchair", "fotel"},
+
                 {"configurable product", "kubek palette"},
 
                 // Number of products in the cart

@@ -44,7 +44,8 @@ public class AddItemsToCart {
     @When("(s)he tries to add it to cart")
     public void actor_tries_to_add_product_to_cart() {
         theActorInTheSpotlight().attemptsTo(
-                AddProduct.toCart()
+                AddProduct.toCart(),
+                WaitUntil.the(ALERT_BOX, isPresent())
         );
     }
 
