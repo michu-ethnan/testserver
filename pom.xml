@@ -279,8 +279,8 @@
                                  <include>**/PaginationSuite*.java</include>
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>50</threadCount>
-                            <forkCount>50</forkCount>
+                            <threadCount>15</threadCount>
+                            <forkCount>15</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>
