@@ -54,5 +54,6 @@ public class CategoryPage {
     public static Target FOURTH_PROMOTION_BANNER = Target.the("Fourth promotion banner").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div/div[2]/div/div[4]/div");
     public static Target NUMBER_OF_PAGES = Target.the("Number of pages").locatedBy("(//div[@data-test=\"quantity-picker-small\"]/../../div[2])[1]");
     public static Target PAGINATION_INPUT_BOTTOM = Target.the("Pagination input bottom").locatedBy("(//div[@data-test=\"quantity-picker-small\"]/input[@type=\"number\"])[2]");
+    public static Target SORT_NAME =Target.the("Filter name").locatedBy("//button[@data-test=\"sorting-button\"]/div[2]");
 
 }

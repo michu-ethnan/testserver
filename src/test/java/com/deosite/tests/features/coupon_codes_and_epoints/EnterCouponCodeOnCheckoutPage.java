@@ -5,6 +5,7 @@ import com.deosite.tests.pages.*;
 import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
 import com.deosite.tests.tasks.basic.RefreshPage;
+import com.deosite.tests.tasks.basic.ReturnToPreviousPage;
 import com.deosite.tests.tasks.mainMenu.ClickCategory;
 import com.deosite.tests.tasks.order.FillInBillingData;
 import com.deosite.tests.tasks.product.*;
@@ -87,8 +88,8 @@ public class EnterCouponCodeOnCheckoutPage {
     @And("she returns to the previous page")
     public void actor_returns_to_the_previous_page() {
         theActorInTheSpotlight().attemptsTo(
-                Click.on(PaymentPage.BACK_TO_CHECKOUT_BUTTON),
-                WaitUntil.the(SUBMIT_BUTTON, isPresent())
+                ReturnToPreviousPage.goToPreviousPage(),
+                WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotPresent())
         );
     }
 

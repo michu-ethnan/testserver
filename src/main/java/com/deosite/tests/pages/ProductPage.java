@@ -21,5 +21,8 @@ public class ProductPage {
 
     public static Target PAGE_NOT_FOUND = Target.the("Page not found").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div/p");
 
+    public static Target PRODUCT_AMOUNT_SELECT = Target.the("product amount selector").locatedBy("//button[@data-test=\"add-to-cart\"]/../div[5]/div[2]/div/button[2]");
+    public static Target PRODUCT_AMOUNT_LIST = Target.the("Product amount list").locatedBy("//*[@id=\"__layers__\"]//div[@option]");
+    public static Target PREVIOUS_PRODUCT_PRICE = Target.the("Previous product price").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div[1]/div/div[3]/div/div[4]/p[1]/span/span/span[1]");
 
 }

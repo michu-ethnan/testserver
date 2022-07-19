@@ -253,7 +253,6 @@ public class ApplyFilters implements Task {
             );
             theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString(url_filter.toLowerCase(Locale.ROOT))));
             theActorInTheSpotlight().should(seeThat(CategoryHeader.valueIs(), containsString(selectedFilter)));
-            theActorInTheSpotlight().should(seeThat(CategoryHeader.valueIs(), containsString(numberOfProductsInFilter)));
 
         }
 

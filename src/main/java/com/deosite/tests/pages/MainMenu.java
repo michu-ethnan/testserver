@@ -23,6 +23,7 @@ public class MainMenu {
     public static Target ALL_FILTERS_BUTTON = Target.the("All filters button").locatedBy("(//div[@data-test='filters-container-desktop']//button)[15]");
 
     public static Target ALL_FILTERS_BUTTON_AFTER_APPLYING_FILTER = Target.the("All filters button").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[3]/div/div[2]/div/div[1]/div/div/div[1]/button");
+    public static Target CLOSE_NEWSLETTER_POPUP = Target.the("Category list").locatedBy("//*[@id=\"__layers__\"]/div/div[2]/div/div[2]/div/div/div/div/div[2]/div[1]");
 
 }
 

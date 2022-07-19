@@ -22,17 +22,36 @@ public class Bundle_pl_PL extends ListResourceBundle {
                 // Products
                 {"mug", "Kubek"},
                 {"armchair", "fotel"},
+                {"armchair", "fotel"},
 
                 {"configurable product", "kubek palette"},
 
                 // Number of products in the cart
                 {"greater", "Twój koszyk (2)"},
                 {"smaller", "Twój koszyk (1)"},
+                //Sort with name
+                {"Wg nazwy Z-A", "T"},
+                {"Wg nazwy Z-A search", "T"},
+                {"Wg nazwy A-Z", "K"},
+                {"Wg nazwy A-Z search", "K"},
 
                 // Categories
 
                 //Headers
                 {"account header", "Konto"},
+                {"Ogród header", "Ogród "},
+                {"Jadalnia header", "Jadalnia "},
+                {"Kuchnia header", "Kuchnia "},
+                {"Jadalnia header", "Jadalnia "},
+                {"Łazienka i garderoba header", "Łazienka i garderoba "},
+                {"Dekoracje header", "Dekoracje "},
+                {"Świat dziecka header", "Świat dziecka "},
+                {"Nowości header", "Nowości "},
+                {"Wyprzedaż header", "Wyprzedaż "},
+                {"Marki header", "Marki i kolekcje"},
+                {"Promocje header", "Promocje - Kupuj Taniej!"},
+                {"Inspiracje header", "#dajarpl"},
+
 
                 // Alerts
                 {"added to cart", "Produkt został dodany do koszyka"},

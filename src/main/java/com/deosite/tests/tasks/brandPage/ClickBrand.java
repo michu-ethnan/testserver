@@ -26,7 +26,7 @@ public class ClickBrand implements Interaction {
                 Click.on(BRAND_LIST.resolveAllFor(actor).get(number)));
     }
 
-    public static ClickBrand byBrand(int number) {
+    public static ClickBrand byBrandName(int number) {
         return Instrumented.instanceOf(ClickBrand.class).withProperties(number);
     }
 }
