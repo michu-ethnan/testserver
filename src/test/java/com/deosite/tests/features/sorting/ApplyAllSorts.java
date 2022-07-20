@@ -91,7 +91,7 @@ public class ApplyAllSorts {
     @When("she sees the first catalog price")
     public void actor_sees_the_first_catalog_price(){
         theActorInTheSpotlight().attemptsTo(
-                Open.productPageByPosition(0)
+                Open.productPageByPosition(3)
         );
         firstProductPrice = ProductCatalogPrice.price().answeredBy(theActorInTheSpotlight());
         System.out.println(firstProductPrice);
@@ -101,7 +101,8 @@ public class ApplyAllSorts {
         theActorInTheSpotlight().attemptsTo(
                 Scroll.to(SEARCH_BAR),
                 ReturnToPreviousPage.goToPreviousPage(),
-                Open.productPageByPosition(22)
+                WaitUntil.the(PRODUCTS_TITLE, isPresent()),
+                Open.productPageByPosition(21)
         );
         secondProductPrice = ProductCatalogPrice.price().answeredBy(theActorInTheSpotlight());
         System.out.println(secondProductPrice);
@@ -109,8 +110,7 @@ public class ApplyAllSorts {
     @And("she sees the first price")
     public void actor_sees_first_price(){
         theActorInTheSpotlight().attemptsTo(
-                Open.productPageByPosition(0)
-
+                Open.productPageByPosition(3)
         );
         firstProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());
     }
@@ -119,7 +119,18 @@ public class ApplyAllSorts {
         theActorInTheSpotlight().attemptsTo(
                 Scroll.to(SEARCH_BAR),
                 ReturnToPreviousPage.goToPreviousPage(),
-                Open.productPageByPosition(22)
+                WaitUntil.the(PRODUCTS_TITLE, isPresent()),
+                Open.productPageByPosition(23)
+        );
+        secondProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());
+    }
+    @And("she sees the second price for Cena: od najwyższej")
+    public void actor_sees_second_price_for_najwyzszej(){
+        theActorInTheSpotlight().attemptsTo(
+                Scroll.to(SEARCH_BAR),
+                ReturnToPreviousPage.goToPreviousPage(),
+                WaitUntil.the(PRODUCTS_TITLE, isPresent()),
+                Open.productPageByPosition(21)
         );
         secondProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());
     }

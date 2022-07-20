@@ -5,7 +5,7 @@ Feature: Apply all sorts
     Given that Maja opens the first category page
     When she applies Cena:_od_najwyższej filter
     And she sees the first price
-    And she sees the second price
+    And she sees the second price for Cena: od najwyższej
     Then she should see that the sort is in descending order
 
   Scenario: Cena: od najniższej, category page

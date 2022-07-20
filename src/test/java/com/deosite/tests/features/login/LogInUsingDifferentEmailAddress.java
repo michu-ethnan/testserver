@@ -42,9 +42,9 @@ public class LogInUsingDifferentEmailAddress {
                 Open.loginPage(),
                 FillInLoginForm.type("login"),
                 SubmitLoginForm.submitLoginForm(),
-                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()).forNoMoreThan(10).seconds(),
                 Open.accountPage(),
-                WaitUntil.the(EMAIL_ADDRESS, isPresent())
+                WaitUntil.the(EMAIL_ADDRESS, isPresent()).forNoMoreThan(10).seconds()
         );
     }
 

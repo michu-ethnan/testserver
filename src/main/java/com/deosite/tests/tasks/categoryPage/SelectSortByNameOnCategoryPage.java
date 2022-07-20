@@ -29,7 +29,7 @@ public class SelectSortByNameOnCategoryPage implements Task {
             actor.attemptsTo(
                     SelectSortingOption.number(1),
                     WaitUntil.the(SearchPage.PRODUCTS_TITLE, isClickable()),
-                    WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotCurrentlyEnabled())
+                    WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotCurrentlyEnabled()).forNoMoreThan(10).seconds()
             );
             theActorInTheSpotlight().should(seeThat(AppliedSortName.Name(), containsString("Cena: od najwyższej")));
             theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("dir=desc&order=final_price")));
@@ -39,7 +39,7 @@ public class SelectSortByNameOnCategoryPage implements Task {
             actor.attemptsTo(
                     SelectSortingOption.number(2),
                     WaitUntil.the(SearchPage.PRODUCTS_TITLE, isClickable()),
-                    WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotCurrentlyEnabled())
+                    WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotCurrentlyEnabled()).forNoMoreThan(10).seconds()
             );
             theActorInTheSpotlight().should(seeThat(AppliedSortName.Name(), containsString("Cena: od najniższej")));
             theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("dir=asc&order=final_price")));
@@ -48,7 +48,8 @@ public class SelectSortByNameOnCategoryPage implements Task {
         if (sortName.contains("Wg_nazwy_Z-A")){
             actor.attemptsTo(
                     SelectSortingOption.number(3),
-                    WaitUntil.the(SearchPage.PRODUCTS_TITLE, isClickable())
+                    WaitUntil.the(SearchPage.PRODUCTS_TITLE, isClickable()),
+                    WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotCurrentlyEnabled()).forNoMoreThan(10).seconds()
             );
             theActorInTheSpotlight().should(seeThat(AppliedSortName.Name(), containsString("Wg nazwy Z-A")));
             theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("dir=desc&order=name")));
@@ -56,7 +57,8 @@ public class SelectSortByNameOnCategoryPage implements Task {
         if (sortName.contains("Wg_nazwy_A-Z")){
             actor.attemptsTo(
                     SelectSortingOption.number(4),
-                    WaitUntil.the(SearchPage.PRODUCTS_TITLE, isClickable())
+                    WaitUntil.the(SearchPage.PRODUCTS_TITLE, isClickable()),
+                    WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotCurrentlyEnabled()).forNoMoreThan(10).seconds()
             );
             theActorInTheSpotlight().should(seeThat(AppliedSortName.Name(), containsString("Wg nazwy A-Z")));
             theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("dir=asc&order=name")));
@@ -64,7 +66,8 @@ public class SelectSortByNameOnCategoryPage implements Task {
         if (sortName.contains("Cena_katalogowa:_od_najwyższej")){
             actor.attemptsTo(
                     SelectSortingOption.number(5),
-                    WaitUntil.the(SearchPage.PRODUCTS_TITLE, isClickable())
+                    WaitUntil.the(SearchPage.PRODUCTS_TITLE, isClickable()),
+                    WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotCurrentlyEnabled()).forNoMoreThan(10).seconds()
             );
             theActorInTheSpotlight().should(seeThat(AppliedSortName.Name(), containsString("Cena katalogowa: od najwyższej")));
             theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("dir=desc&order=price")));
@@ -72,7 +75,8 @@ public class SelectSortByNameOnCategoryPage implements Task {
         if (sortName.contains("Cena_katalogowa:_od_najniższej")){
             actor.attemptsTo(
                     SelectSortingOption.number(6),
-                    WaitUntil.the(SearchPage.PRODUCTS_TITLE, isClickable())
+                    WaitUntil.the(SearchPage.PRODUCTS_TITLE, isClickable()),
+                    WaitUntil.the(LoginPage.SUBMIT_BUTTON, isNotCurrentlyEnabled()).forNoMoreThan(10).seconds()
             );
             theActorInTheSpotlight().should(seeThat(AppliedSortName.Name(), containsString("Cena katalogowa: od najniższej")));
             theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("dir=asc&order=price")));

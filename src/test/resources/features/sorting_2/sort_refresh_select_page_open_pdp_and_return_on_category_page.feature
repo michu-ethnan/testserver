@@ -11,7 +11,7 @@ Feature: Sort, refresh, select page, open pdp and return on category page
     Then she should be on the inserted page number
     And she refreshes the page and ensures that Cena:_od_najwyższej is still applied
     When she sees the first price
-    And she sees the second price
+    And she sees the second price for Cena: od najwyższej
     Then she should see that the sort is in descending order
     Then she returns to previous page and ensures the page number and Cena:_od_najwyższej sort
     Then she should be on the inserted page number

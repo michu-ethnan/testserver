@@ -12,9 +12,9 @@ import net.serenitybdd.screenplay.actions.SendKeys;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
+import static com.deosite.tests.pages.AccountPage.EMAIL_ADDRESS;
 import static com.deosite.tests.pages.LoginPage.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class FillInLoginFormWithDifferentEmailAddress implements Task {
 
@@ -41,9 +41,9 @@ public class FillInLoginFormWithDifferentEmailAddress implements Task {
         actor.attemptsTo(
                 WaitUntil.the(SUBMIT_BUTTON, isClickable()),
                 Click.on(SUBMIT_BUTTON),
-                WaitUntil.the(MY_ACCOUNT_BUTTON, isClickable()),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()).forNoMoreThan(10).seconds(),
                 Open.accountPage(),
-                WaitUntil.the(AccountPage.EMAIL_ADDRESS, isPresent())
+                WaitUntil.the(EMAIL_ADDRESS, isPresent()).forNoMoreThan(10).seconds()
         );
     }
 
