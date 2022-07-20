@@ -19,13 +19,13 @@ Feature: Apply all sorts
     Given that Maja opens the first category page
     When she applies Wg_nazwy_Z-A filter
     And she sees the first product name
-    Then she should see that the sort is "Wg nazwy Z-A"
+
 
   Scenario: Wg nazwy A-Z, category page
     Given that Maja opens the first category page
     When she applies Wg_nazwy_A-Z filter
     And she sees the first product name
-    Then she should see that the sort is "Wg nazwy A-Z"
+
 
   Scenario: Cena katalogowa: od najwyższej, category page
     Given that Maja opens the first category page
@@ -46,13 +46,13 @@ Feature: Apply all sorts
     Given that Maja attempts to search for a "mug"
     When she applies Wg_nazwy_Z-A filter on search page
     And she sees the first product name
-    Then she should see that the sort is "Wg nazwy Z-A"
+
 
   Scenario: Wg nazwy A-Z, search page
     Given that Maja attempts to search for a "mug"
     When she applies Wg_nazwy_A-Z filter on search page
     And she sees the first product name
-    Then she should see that the sort is "Wg nazwy A-Z"
+
 
   Scenario: Cena: od najwyższej, search page
     Given that Maja attempts to search for a "mug"

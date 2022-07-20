@@ -73,7 +73,7 @@ public class ApplyAllSorts {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(CategoryPage.SORTING_BUTTON),
                 SelectSortByNameOnCategoryPage.byName(sortName),
-                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()).forNoMoreThan(10).seconds(),
                 WaitUntil.the(PRODUCTS_TITLE, isClickable()).forNoMoreThan(50).seconds()
         );
         numberOfProductsAfterSort = CATEGORY_HEADER.resolveFor(theActorInTheSpotlight()).getText().replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "");
@@ -83,7 +83,7 @@ public class ApplyAllSorts {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(CategoryPage.SORTING_BUTTON),
                 SelectSortByNameOnSearchPage.byName(sortName),
-                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()).forNoMoreThan(10).seconds(),
                 WaitUntil.the(PRODUCTS_TITLE, isClickable()).forNoMoreThan(50).seconds()
         );
         numberOfProductsAfterSort = CATEGORY_HEADER.resolveFor(theActorInTheSpotlight()).getText().replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "");
@@ -91,7 +91,7 @@ public class ApplyAllSorts {
     @When("she sees the first catalog price")
     public void actor_sees_the_first_catalog_price(){
         theActorInTheSpotlight().attemptsTo(
-                Open.productPageByPosition(1)
+                Open.productPageByPosition(0)
         );
         firstProductPrice = ProductCatalogPrice.price().answeredBy(theActorInTheSpotlight());
         System.out.println(firstProductPrice);
@@ -109,7 +109,7 @@ public class ApplyAllSorts {
     @And("she sees the first price")
     public void actor_sees_first_price(){
         theActorInTheSpotlight().attemptsTo(
-                Open.productPageByPosition(2)
+                Open.productPageByPosition(0)
 
         );
         firstProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());

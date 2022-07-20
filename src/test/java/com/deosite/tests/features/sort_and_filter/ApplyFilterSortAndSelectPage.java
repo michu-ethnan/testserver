@@ -78,7 +78,7 @@ public class ApplyFilterSortAndSelectPage {
                 WaitUntil.the(SUBMIT_FILTER_BUTTON, isNotPresent()),
                 Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
         );
-        theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("producer=44")));
+        theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("producer=49")));
         theActorInTheSpotlight().should(seeThat(CategoryHeader.valueIs(), containsString(numberOfProductsAfterFilter)));
         numberOfProductsAfterSort = CATEGORY_HEADER.resolveFor(theActorInTheSpotlight()).getText().replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "");
 
@@ -136,7 +136,7 @@ public class ApplyFilterSortAndSelectPage {
                 WaitUntil.the(SUBMIT_FILTER_BUTTON, isNotPresent()),
                 Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
         );
-        theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("dajar_collection=443")));
+        theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("dajar_collection=421")));
         theActorInTheSpotlight().should(seeThat(CategoryHeader.valueIs(), containsString(numberOfProductsAfterFilter)));
        numberOfProductsAfterSort = CATEGORY_HEADER.resolveFor(theActorInTheSpotlight()).getText().replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "");
 
@@ -159,8 +159,8 @@ public class ApplyFilterSortAndSelectPage {
                 EnsureSortName.bySortName(sortName),
                 Ensure.that(numberOfProductsAfterFilter).isEqualTo(numberOfProductsAfterSort)
         );
-        theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("dajar_collection=443")));
-        theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("producer=44")));
+        theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("dajar_collection=421")));
+        theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("producer=49")));
         theActorInTheSpotlight().should(seeThat(CategoryHeader.valueIs(), containsString(numberOfProductsAfterFilter)));
     }
 }

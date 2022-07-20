@@ -63,7 +63,7 @@ public class OrderProductsFromCategories {
                 MoveMouseToTop.move(),
                 WaitUntil.the(CATEGORY_HEADER, isPresent()),
                 MoveMouseToTop.move(),
-                OpenInspirations.by(0)
+                OpenInspirations.by(2)
         );
     }
     @Given("that {word} wants to order products from Promocje page")
