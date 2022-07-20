@@ -281,8 +281,8 @@
                                   <include>**/SortAndFilterSuite*.java</include>
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>5</threadCount>
-                            <forkCount>5</forkCount>
+                            <threadCount>7</threadCount>
+                            <forkCount>7</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>
